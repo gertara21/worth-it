@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { Loader } from '@googlemaps/js-api-loader';
+import { setOptions, importLibrary } from '@googlemaps/js-api-loader';
 import { MarkerClusterer } from '@googlemaps/markerclusterer';
 import s from './Mapa.module.css';
 
@@ -42,13 +42,10 @@ export default function Mapa({ tiendas, tiendaSeleccionada, onTiendaSeleccionada
 
     if (!API_KEY) return; // No key → show message (handled in render)
 
-    const loader = new Loader({
-      apiKey: API_KEY,
-      version: 'weekly',
-      libraries: ['marker'],
-    });
+    setOptions({ apiKey: API_KEY, version: 'weekly' });
 
-    loader.load().then((google) => {
+    Promise.all([importLibrary('maps'), importLibrary('marker')]).then(() => {
+      const google = window.google;
       googleRef.current = google;
 
       const map = new google.maps.Map(mapRef.current, {
