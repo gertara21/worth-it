@@ -45,7 +45,7 @@ export default function Mapa({ tiendas, tiendaSeleccionada, onTiendaSeleccionada
     const loader = new Loader({
       apiKey: API_KEY,
       version: 'weekly',
-      libraries: [],
+      libraries: ['marker'],
     });
 
     loader.load().then((google) => {
@@ -92,7 +92,7 @@ export default function Mapa({ tiendas, tiendaSeleccionada, onTiendaSeleccionada
       svgEl.style.cursor = 'pointer';
       svgEl.title = tienda.nombre;
 
-      const marker = new google.maps.marker.AdvancedMarkerElement
+      const marker = google.maps.marker?.AdvancedMarkerElement
         ? new google.maps.marker.AdvancedMarkerElement({
             position: { lat: tienda.lat, lng: tienda.lon },
             map,
@@ -134,7 +134,7 @@ export default function Mapa({ tiendas, tiendaSeleccionada, onTiendaSeleccionada
             width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;
             border:2.5px solid white;box-shadow:0 2px 8px rgba(0,0,0,.25);cursor:pointer;
           ">${count}</div>`;
-          return new google.maps.marker.AdvancedMarkerElement
+          return google.maps.marker?.AdvancedMarkerElement
             ? new google.maps.marker.AdvancedMarkerElement({ position, content: el })
             : new google.maps.Marker({
                 position,
@@ -153,6 +153,7 @@ export default function Mapa({ tiendas, tiendaSeleccionada, onTiendaSeleccionada
       mapInstanceRef.current.setZoom(15);
     }
     // Update marker styles
+    const google = googleRef.current;
     markersRef.current.forEach(({ tienda, marker, svgEl }) => {
       const sel = tienda.id === tiendaSeleccionada.id;
       if (svgEl) svgEl.innerHTML = makePinSVG(sel);

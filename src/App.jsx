@@ -1,10 +1,27 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Component } from 'react';
 import Cabecera from './components/Cabecera/Cabecera';
 import SeccionComprar from './components/SeccionComprar/SeccionComprar';
 import SeccionReparar from './components/SeccionReparar/SeccionReparar';
 import SeccionComunidad from './components/SeccionComunidad/SeccionComunidad';
 import SeccionComoElegimos from './components/SeccionComoElegimos/SeccionComoElegimos';
 import { useBarcelona } from './hooks/useBarcelona';
+
+class ErrorBoundary extends Component {
+  state = { error: null };
+  static getDerivedStateFromError(error) { return { error }; }
+  render() {
+    if (this.state.error) {
+      return (
+        <div style={{ padding: '2rem', fontFamily: 'sans-serif', color: '#111' }}>
+          <h2>Algo ha fallado</h2>
+          <p>Recarga la página para intentarlo de nuevo.</p>
+          <pre style={{ fontSize: '0.75rem', color: '#888' }}>{this.state.error.message}</pre>
+        </div>
+      );
+    }
+    return this.props.children;
+  }
+}
 
 export default function App() {
   const [seccionActiva, setSeccionActiva] = useState('comprar');
@@ -29,7 +46,7 @@ export default function App() {
   };
 
   return (
-    <>
+    <ErrorBoundary>
       <Cabecera
         seccionActiva={seccionActiva}
         onSeccion={handleSeccion}
@@ -38,16 +55,18 @@ export default function App() {
 
       <main>
         {seccionActiva === 'comprar' && (
-          <SeccionComprar
-            tiendas={tiendas.filter((t) => t.tipo === 'compra')}
-            cargando={cargando}
-            barcelonaTime={barcelonaTime}
-          />
+          <ErrorBoundary>
+            <SeccionComprar
+              tiendas={tiendas.filter((t) => t.tipo === 'compra')}
+              cargando={cargando}
+              barcelonaTime={barcelonaTime}
+            />
+          </ErrorBoundary>
         )}
         {seccionActiva === 'reparar' && <SeccionReparar />}
         {seccionActiva === 'comunidad' && <SeccionComunidad />}
         {seccionActiva === 'elegimos' && <SeccionComoElegimos />}
       </main>
-    </>
+    </ErrorBoundary>
   );
 }
