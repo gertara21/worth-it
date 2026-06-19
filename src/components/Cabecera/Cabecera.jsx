@@ -82,21 +82,6 @@ export default function Cabecera({ seccionActiva, onSeccion, barcelonaTime }) {
 
 function LogoSVG() {
   return (
-    <svg width="120" height="36" viewBox="0 0 120 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      {/* Tag shape */}
-      <rect x="1" y="1" width="88" height="34" rx="6" fill="white" stroke="#111111" strokeWidth="2"/>
-      <path d="M89 18L96 10V26L89 18Z" fill="white" stroke="#111111" strokeWidth="2" strokeLinejoin="round"/>
-      <circle cx="93" cy="18" r="2.5" fill="#111111"/>
-      {/* Worth It text */}
-      <text x="7" y="14" fontFamily="Space Grotesk, sans-serif" fontWeight="700" fontSize="11" fill="#111111">Worth</text>
-      <text x="7" y="27" fontFamily="Space Grotesk, sans-serif" fontWeight="700" fontSize="11" fill="#111111">It?</text>
-      {/* Sun */}
-      <path d="M52 26 A10 10 0 0 1 72 26Z" fill="#F26122"/>
-      <line x1="54" y1="24" x2="70" y2="24" stroke="white" strokeWidth="1.5"/>
-      <line x1="55" y1="26.5" x2="69" y2="26.5" stroke="white" strokeWidth="1.5"/>
-      {/* Claim */}
-      <text x="100" y="16" fontFamily="Space Grotesk, sans-serif" fontWeight="500" fontSize="7" fill="#111111">La pausa</text>
-      <text x="100" y="25" fontFamily="Space Grotesk, sans-serif" fontWeight="500" fontSize="7" fill="#111111">antes de</text>
-    </svg>
+    <img src="/logo.jpeg" alt="Worth It logo" height="36" style={{ display: 'block' }} />
   );
 }
