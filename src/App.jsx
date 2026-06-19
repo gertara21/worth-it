@@ -7,15 +7,18 @@ import SeccionComoElegimos from './components/SeccionComoElegimos/SeccionComoEle
 import { useBarcelona } from './hooks/useBarcelona';
 
 class ErrorBoundary extends Component {
-  state = { error: null };
+  state = { error: null, stack: null };
   static getDerivedStateFromError(error) { return { error }; }
+  componentDidCatch(error, info) {
+    this.setState({ stack: info.componentStack });
+  }
   render() {
     if (this.state.error) {
       return (
-        <div style={{ padding: '2rem', fontFamily: 'sans-serif', color: '#111' }}>
-          <h2>Algo ha fallado</h2>
-          <p>Recarga la página para intentarlo de nuevo.</p>
-          <pre style={{ fontSize: '0.75rem', color: '#888' }}>{this.state.error.message}</pre>
+        <div style={{ padding: '2rem', fontFamily: 'monospace', color: '#111', background: '#fff5f5', minHeight: '100vh' }}>
+          <h2 style={{ color: '#c00' }}>Error</h2>
+          <p style={{ fontSize: '1rem', fontWeight: 'bold' }}>{this.state.error.message}</p>
+          <pre style={{ fontSize: '0.8rem', color: '#555', whiteSpace: 'pre-wrap', wordBreak: 'break-all' }}>{this.state.stack}</pre>
         </div>
       );
     }
