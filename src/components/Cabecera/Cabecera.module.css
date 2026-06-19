@@ -1,0 +1,154 @@
+.cabecera {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--color-fondo);
+  border-bottom: 1.5px solid var(--color-borde);
+  box-shadow: var(--sombra-sm);
+}
+
+.inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: var(--cabecera-h);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  padding: 4px 0;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.navDesktop {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+}
+
+.navBtn {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-texto-suave);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+
+.navBtn:hover {
+  background: rgba(242, 97, 34, 0.08);
+  color: var(--color-primario);
+}
+
+.navBtn.activo {
+  background: var(--color-primario);
+  color: white;
+  font-weight: 600;
+}
+
+.reloj {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-texto-suave);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.relojPunto {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-primario);
+  animation: pulso 2s ease-in-out infinite;
+}
+
+@keyframes pulso {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(0.85); }
+}
+
+.hamburger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radio-sm);
+  background: none;
+  border: 1.5px solid var(--color-borde);
+  cursor: pointer;
+  color: var(--color-texto);
+  flex-shrink: 0;
+}
+
+.navMobile {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 16px 12px;
+  gap: 4px;
+  border-top: 1px solid var(--color-borde);
+  background: var(--color-fondo);
+}
+
+.navMobileBtn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: var(--radio-sm);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-texto-suave);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s;
+}
+
+.navMobileBtn:hover {
+  background: rgba(242, 97, 34, 0.08);
+  color: var(--color-primario);
+}
+
+.navMobileBtn.activo {
+  background: rgba(242, 97, 34, 0.12);
+  color: var(--color-primario);
+  font-weight: 700;
+}
+
+.relojMobile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  font-size: 13px;
+  color: var(--color-texto-suave);
+  margin-top: 4px;
+}
+
+@media (max-width: 768px) {
+  .navDesktop { display: none; }
+  .reloj { display: none; }
+  .hamburger { display: flex; margin-left: auto; }
+}
+
+@media (min-width: 769px) {
+  .navMobile { display: none !important; }
+}

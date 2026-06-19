@@ -1,0 +1,2433 @@
+{
+  "meta": {
+    "proyecto": "Reto Fundación Triodos · BYG Social Challenge",
+    "descripcion": "Tiendas de moda local y sostenible en Barcelona ciudad (piloto).",
+    "ciudad": "Barcelona",
+    "zonaHoraria": "Europe/Madrid",
+    "generado": "2026-06-17",
+    "totalTiendas": 35,
+    "esquemaHorario": "horario: {lun..dom: [[apertura,cierre], ...] | [] cerrado | null desconocido}. Usar zonaHoraria para 'abierto ahora'."
+  },
+  "categorias": [
+    {
+      "id": "compra",
+      "nombre": "Comprar",
+      "descripcion": "Tiendas de moda local/sostenible.",
+      "activa": true
+    },
+    {
+      "id": "reparacion",
+      "nombre": "Reparar",
+      "descripcion": "Reparación de ropa y calzado (pendiente de búsqueda).",
+      "activa": false
+    }
+  ],
+  "barrios": [
+    "Ciutat Vella / El Born",
+    "Ciutat Vella / El Raval",
+    "Ciutat Vella / Gótic",
+    "Eixample Dreta",
+    "Esquerra de l'Eixample",
+    "Gràcia",
+    "Horta-Guinardó",
+    "Les Corts",
+    "Sant Andreu",
+    "Sant Antoni (Eixample)",
+    "Sant Martí",
+    "Sant Martí / Clot",
+    "Sant Martí / Poblenou",
+    "Sarrià-Sant Gervasi"
+  ],
+  "tiendas": [
+    {
+      "id": "colmillo-de-morsa",
+      "nombre": "Colmillo de Morsa",
+      "tipo": "compra",
+      "sector": "moda",
+      "direccion": "Carrer dels Corders, 11",
+      "barrio": "Ciutat Vella / El Born",
+      "lat": 41.3856446,
+      "lon": 2.179596,
+      "telefono": "+34 687 52 88 64",
+      "email": "elivallecillo@gmail.com",
+      "web": "https://colmillodemorsa.com",
+      "instagram": "https://instagram.com/colmillodemorsa",
+      "presencia": "Alta",
+      "valoracionGoogle": 4.9,
+      "criterio": "Marca propia nacida en Barcelona (2009); diseño y producción local, tejidos sostenibles, atemporal.",
+      "fuente": "Ambos",
+      "horarioTexto": "L–S 12:00–20:00 · D cerrado",
+      "horario": {
+        "lun": [
+          [
+            "12:00",
+            "20:00"
+          ]
+        ],
+        "mar": [
+          [
+            "12:00",
+            "20:00"
+          ]
+        ],
+        "mie": [
+          [
+            "12:00",
+            "20:00"
+          ]
+        ],
+        "jue": [
+          [
+            "12:00",
+            "20:00"
+          ]
+        ],
+        "vie": [
+          [
+            "12:00",
+            "20:00"
+          ]
+        ],
+        "sab": [
+          [
+            "12:00",
+            "20:00"
+          ]
+        ],
+        "dom": []
+      },
+      "horarioFiable": true,
+      "_notaInterna": "Coincide. Email de fuentes públicas.",
+      "estadoVerificacion": "Verificada"
+    },
+    {
+      "id": "ivori",
+      "nombre": "Ivori",
+      "tipo": "compra",
+      "sector": "moda",
+      "direccion": "Carrer dels Mirallers, 7",
+      "barrio": "Ciutat Vella / El Born",
+      "lat": 41.3841602,
+      "lon": 2.1807204,
+      "telefono": "+34 930 27 56 10",
+      "email": "contact@ivoribarcelona.com",
+      "web": "https://www.ivoribarcelona.com/",
+      "instagram": "https://instagram.com/ivoribarcelona",
+      "presencia": "Alta",
+      "valoracionGoogle": 4.8,
+      "criterio": "Tienda de Carola Alexandre: marca propia + diseño catalán/local (Rita Row, Maria Roch…), 'made in Barcelona'.",
+      "fuente": "Ambos",
+      "horarioTexto": "L–S 11:30–19:30 · D cerrado",
+      "horario": {
+        "lun": [
+          [
+            "11:30",
+            "19:30"
+          ]
+        ],
+        "mar": [
+          [
+            "11:30",
+            "19:30"
+          ]
+        ],
+        "mie": [
+          [
+            "11:30",
+            "19:30"
+          ]
+        ],
+        "jue": [
+          [
+            "11:30",
+            "19:30"
+          ]
+        ],
+        "vie": [
+          [
+            "11:30",
+            "19:30"
+          ]
+        ],
+        "sab": [
+          [
+            "11:30",
+            "19:30"
+          ]
+        ],
+        "dom": []
+      },
+      "horarioFiable": true,
+      "_notaInterna": "Coincide. Email de fuentes públicas; verificar.",
+      "estadoVerificacion": "Verificada"
+    },
+    {
+      "id": "ecometas",
+      "nombre": "Ecometas",
+      "tipo": "compra",
+      "sector": "moda",
+      "direccion": "Carrer de la Lluna, 1, Local 6",
+      "barrio": "Ciutat Vella / El Raval",
+      "lat": 41.3806552,
+      "lon": 2.1665139,
+      "telefono": "+34 666 82 71 22",
+      "email": "",
+      "web": "https://ecometas.com",
+      "instagram": "https://instagram.com/ecometascom",
+      "presencia": "Alta",
+      "valoracionGoogle": 4.9,
+      "criterio": "Lencería y ropa interior/baño sostenible; fibras naturales, marcas éticas fundadas por mujeres.",
+      "fuente": "Ambos",
+      "horarioTexto": "L cerrado · M,X 11:00–14:30 · J,V 11:00–14:30 / 16:30–20:00 · S 11:00–14:30 / 16:30–20:00 · D cerrado",
+      "horario": {
+        "lun": [],
+        "mar": [
+          [
+            "11:00",
+            "14:30"
+          ]
+        ],
+        "mie": [
+          [
+            "11:00",
+            "14:30"
+          ]
+        ],
+        "jue": [
+          [
+            "11:00",
+            "14:30"
+          ],
+          [
+            "16:30",
+            "20:00"
+          ]
+        ],
+        "vie": [
+          [
+            "11:00",
+            "14:30"
+          ],
+          [
+            "16:30",
+            "20:00"
+          ]
+        ],
+        "sab": [
+          [
+            "11:00",
+            "14:30"
+          ],
+          [
+            "16:30",
+            "20:00"
+          ]
+        ],
+        "dom": []
+      },
+      "horarioFiable": true,
+      "_notaInterna": "Puse el IG verificado.",
+      "estadoVerificacion": "Verificada"
+    },
+    {
+      "id": "anjara-barcelona",
+      "nombre": "Anjara Barcelona",
+      "tipo": "compra",
+      "sector": "moda",
+      "direccion": "Carrer de la Diputació, 256, tienda 1",
+      "barrio": "Eixample Dreta",
+      "lat": 41.3899311,
+      "lon": 2.1665815,
+      "telefono": "+34 932 72 10 82",
+      "email": "",
+      "web": "https://anjarabarcelona.com",
+      "instagram": "https://instagram.com/anjarabarcelona",
+      "presencia": "Media",
+      "valoracionGoogle": 4.8,
+      "criterio": "Colecciones artesanales de diseño propio (boho), confección a mano.",
+      "fuente": "Ambos",
+      "horarioTexto": "L–S 10:00–20:00 · D cerrado",
+      "horario": {
+        "lun": [
+          [
+            "10:00",
+            "20:00"
+          ]
+        ],
+        "mar": [
+          [
+            "10:00",
+            "20:00"
+          ]
+        ],
+        "mie": [
+          [
+            "10:00",
+            "20:00"
+          ]
+        ],
+        "jue": [
+          [
+            "10:00",
+            "20:00"
+          ]
+        ],
+        "vie": [
+          [
+            "10:00",
+            "20:00"
+          ]
+        ],
+        "sab": [
+          [
+            "10:00",
+            "20:00"
+          ]
+        ],
+        "dom": []
+      },
+      "horarioFiable": true,
+      "_notaInterna": "",
+      "estadoVerificacion": "Verificada"
+    },
+    {
+      "id": "the-good-store-barcelona",
+      "nombre": "The Good Store Barcelona",
+      "tipo": "compra",
+      "sector": "moda",
+      "direccion": "Carrer de València, 343, Bajos 2",
+      "barrio": "Eixample Dreta",
+      "lat": 41.397822,
+      "lon": 2.169952,
+      "telefono": "+34 626 25 90 90",
+      "email": "",
+      "web": "https://thegoodstorebarcelona.com",
+      "instagram": "https://www.instagram.com/the.good.store.barcelona/",
+      "presencia": "Media",
+      "valoracionGoogle": 4.6,
+      "criterio": "Multimarca curada de moda sostenible/ética; mayoría made in Spain, materiales certificados.",
+      "fuente": "Ambos",
+      "horarioTexto": "L–V 11:00–14:00 / 16:30–20:00 · S 11:00–14:15 · D cerrado",
+      "horario": {
+        "lun": [
+          [
+            "11:00",
+            "14:00"
+          ],
+          [
+            "16:30",
+            "20:00"
+          ]
+        ],
+        "mar": [
+          [
+            "11:00",
+            "14:00"
+          ],
+          [
+            "16:30",
+            "20:00"
+          ]
+        ],
+        "mie": [
+          [
+            "11:00",
+            "14:00"
+          ],
+          [
+            "16:30",
+            "20:00"
+          ]
+        ],
+        "jue": [
+          [
+            "11:00",
+            "14:00"
+          ],
+          [
+            "16:30",
+            "20:00"
+          ]
+        ],
+        "vie": [
+          [
+            "11:00",
+            "14:00"
+          ],
+          [
+            "16:30",
+            "20:00"
+          ]
+        ],
+        "sab": [
+          [
+            "11:00",
+            "14:15"
+          ]
+        ],
+        "dom": []
+      },
+      "horarioFiable": true,
+      "_notaInterna": "He cambiado de alta a media, revisar bien.",
+      "estadoVerificacion": "Verificada"
+    },
+    {
+      "id": "greenlifestyle-ecofashion",
+      "nombre": "Greenlifestyle Ecofashion",
+      "tipo": "compra",
+      "sector": "moda",
+      "direccion": "Carrer d'Astúries, 34",
+      "barrio": "Gràcia",
+      "lat": 41.40348,
+      "lon": 2.15459,
+      "telefono": "+34 931 86 20 10",
+      "email": "",
+      "web": "https://greenlifestyle.es",
+      "instagram": "https://instagram.com/greenlifestylebcn",
+      "presencia": "Alta",
+      "valoracionGoogle": 4.8,
+      "criterio": "Moda ecológica, producción ética; selección de marcas sostenibles.",
+      "fuente": "Ambos",
+      "horarioTexto": "L–V 11:00–15:00 / 16:30–21:00 · S 11:00–15:00 / 16:00–21:00 · D cerrado",
+      "horario": {
+        "lun": [
+          [
+            "11:00",
+            "15:00"
+          ],
+          [
+            "16:30",
+            "21:00"
+          ]
+        ],
+        "mar": [
+          [
+            "11:00",
+            "15:00"
+          ],
+          [
+            "16:30",
+            "21:00"
+          ]
+        ],
+        "mie": [
+          [
+            "11:00",
+            "15:00"
+          ],
+          [
+            "16:30",
+            "21:00"
+          ]
+        ],
+        "jue": [
+          [
+            "11:00",
+            "15:00"
+          ],
+          [
+            "16:30",
+            "21:00"
+          ]
+        ],
+        "vie": [
+          [
+            "11:00",
+            "15:00"
+          ],
+          [
+            "16:30",
+            "21:00"
+          ]
+        ],
+        "sab": [
+          [
+            "11:00",
+            "15:00"
+          ],
+          [
+            "16:00",
+            "21:00"
+          ]
+        ],
+        "dom": []
+      },
+      "horarioFiable": true,
+      "_notaInterna": "He cambiado de alta a media, revisar bien.",
+      "estadoVerificacion": "Verificada"
+    },
+    {
+      "id": "selvatika",
+      "nombre": "Selvatika",
+      "tipo": "compra",
+      "sector": "moda",
+      "direccion": "Carrer del Torrent de l'Olla, 66 (local 2)",
+      "barrio": "Gràcia",
+      "lat": 41.4004334,
+      "lon": 2.1594933,
+      "telefono": "+34 653 11 02 68",
+      "email": "",
+      "web": "https://selvatika.shop",
+      "instagram": "https://instagram.com/selvatika.barcelona",
+      "presencia": "Media-Alta",
+      "valoracionGoogle": 4.7,
+      "criterio": "Marca local de Violaine Nalini; diseñada y producida en su taller de Barcelona (2012), km0, slow fashion.",
+      "fuente": "Ambos",
+      "horarioTexto": "L,M,J 11:00–14:00 / 15:30–20:00 · V 11:00–14:00 / 15:30–19:30 · X,S,D cerrado",
+      "horario": {
+        "lun": [
+          [
+            "11:00",
+            "14:00"
+          ],
+          [
+            "15:30",
+            "20:00"
+          ]
+        ],
+        "mar": [
+          [
+            "11:00",
+            "14:00"
+          ],
+          [
+            "15:30",
+            "20:00"
+          ]
+        ],
+        "mie": [],
+        "jue": [
+          [
+            "11:00",
+            "14:00"
+          ],
+          [
+            "15:30",
+            "20:00"
+          ]
+        ],
+        "vie": [
+          [
+            "11:00",
+            "14:00"
+          ],
+          [
+            "15:30",
+            "19:30"
+          ]
+        ],
+        "sab": [],
+        "dom": []
+      },
+      "horarioFiable": true,
+      "_notaInterna": "Puse el IG verificado; tu valor queda anotado en Discrepancias.",
+      "estadoVerificacion": "Verificada"
+    },
+    {
+      "id": "ven-y-cogelo",
+      "nombre": "VEN Y COGELO",
+      "tipo": "compra",
+      "sector": "moda",
+      "direccion": "Carrer de Ramón y Cajal, 4",
+      "barrio": "Gràcia",
+      "lat": 41.4019512,
+      "lon": 2.1578082,
+      "telefono": "+34 626 05 30 71",
+      "email": "",
+      "web": "https://venycogelo.com",
+      "instagram": "https://instagram.com/venycogelo",
+      "presencia": "Media",
+      "valoracionGoogle": 4.9,
+      "criterio": "Tienda-taller de Helena García (2008); ropa de autora hecha a mano, km0, criterios justos.",
+      "fuente": "Ambos",
+      "horarioTexto": "L cerrado · M–V 11:45–14:00 / 17:00–20:00 · S 11:45–14:00 · D cerrado",
+      "horario": {
+        "lun": [],
+        "mar": [
+          [
+            "11:45",
+            "14:00"
+          ],
+          [
+            "17:00",
+            "20:00"
+          ]
+        ],
+        "mie": [
+          [
+            "11:45",
+            "14:00"
+          ],
+          [
+            "17:00",
+            "20:00"
+          ]
+        ],
+        "jue": [
+          [
+            "11:45",
+            "14:00"
+          ],
+          [
+            "17:00",
+            "20:00"
+          ]
+        ],
+        "vie": [
+          [
+            "11:45",
+            "14:00"
+          ],
+          [
+            "17:00",
+            "20:00"
+          ]
+        ],
+        "sab": [
+          [
+            "11:45",
+            "14:00"
+          ]
+        ],
+        "dom": []
+      },
+      "horarioFiable": true,
+      "_notaInterna": "Coincide bien en ambas listas.",
+      "estadoVerificacion": "Verificada"
+    },
+    {
+      "id": "bonito",
+      "nombre": "BONITO",
+      "tipo": "compra",
+      "sector": "moda",
+      "direccion": "C. del Dr. Trueta, 168, p7",
+      "barrio": "Sant Martí / Poblenou",
+      "lat": 41.3965138,
+      "lon": 2.2009929,
+      "telefono": "+34 932 38 96 90",
+      "email": "",
+      "web": "https://bonito.eco",
+      "instagram": "https://instagram.com/bonito.eco",
+      "presencia": "Alta",
+      "valoracionGoogle": 5,
+      "criterio": "Marca propia de algodón orgánico; prendas duraderas, filosofía ética.",
+      "fuente": "Ambos",
+      "horarioTexto": "L–J 9:00–18:30 · V 9:00–15:00 · S–D cerrado",
+      "horario": {
+        "lun": [
+          [
+            "9:00",
+            "18:30"
+          ]
+        ],
+        "mar": [
+          [
+            "9:00",
+            "18:30"
+          ]
+        ],
+        "mie": [
+          [
+            "9:00",
+            "18:30"
+          ]
+        ],
+        "jue": [
+          [
+            "9:00",
+            "18:30"
+          ]
+        ],
+        "vie": [
+          [
+            "9:00",
+            "15:00"
+          ]
+        ],
+        "sab": [],
+        "dom": []
+      },
+      "horarioFiable": true,
+      "_notaInterna": "Web/IG aportados por tu Excel (verificar que abren).",
+      "estadoVerificacion": "Verificada"
+    },
+    {
+      "id": "somia",
+      "nombre": "Somia",
+      "tipo": "compra",
+      "sector": "moda",
+      "direccion": "Carrer dels Madrazo, 133",
+      "barrio": "Sarrià-Sant Gervasi",
+      "lat": 41.3965685,
+      "lon": 2.1442673,
+      "telefono": "+34 938 24 10 98",
+      "email": "",
+      "web": "https://somia.store",
+      "instagram": "https://instagram.com/somia.store",
+      "presencia": "Alta",
+      "valoracionGoogle": 4.7,
+      "criterio": "Ropa sostenible de diseño local; materiales sostenibles, compromiso social/ambiental.",
+      "fuente": "Ambos",
+      "horarioTexto": "L–S 10:30–20:30 · D cerrado",
+      "horario": {
+        "lun": [
+          [
+            "10:30",
+            "20:30"
+          ]
+        ],
+        "mar": [
+          [
+            "10:30",
+            "20:30"
+          ]
+        ],
+        "mie": [
+          [
+            "10:30",
+            "20:30"
+          ]
+        ],
+        "jue": [
+          [
+            "10:30",
+            "20:30"
+          ]
+        ],
+        "vie": [
+          [
+            "10:30",
+            "20:30"
+          ]
+        ],
+        "sab": [
+          [
+            "10:30",
+            "20:30"
+          ]
+        ],
+        "dom": []
+      },
+      "horarioFiable": true,
+      "_notaInterna": "Web/IG: aportados por tu Excel (yo no los había localizado → verificar). Presencia: tú 'Alta' / yo 'Baja'.",
+      "estadoVerificacion": "Verificada"
+    },
+    {
+      "id": "soul-barcelona-tallers",
+      "nombre": "Soul Barcelona (Tallers)",
+      "tipo": "compra",
+      "sector": "moda",
+      "direccion": "C/ Tallers, 15",
+      "barrio": "Ciutat Vella / El Raval",
+      "lat": 41.3847231,
+      "lon": 2.1693144,
+      "telefono": "+34 934 81 32 94",
+      "email": "",
+      "web": "https://soul-barcelona.com",
+      "instagram": "https://instagram.com/soulbarcelona",
+      "presencia": "Media",
+      "valoracionGoogle": 4.2,
+      "criterio": "Segundo local de Soul Barcelona (moda urbana/alternativa).",
+      "fuente": "Tu Excel",
+      "horarioTexto": "L–V 11:00–20:30 · S 11:00–20:45 · D cerrado",
+      "horario": {
+        "lun": [
+          [
+            "11:00",
+            "20:30"
+          ]
+        ],
+        "mar": [
+          [
+            "11:00",
+            "20:30"
+          ]
+        ],
+        "mie": [
+          [
+            "11:00",
+            "20:30"
+          ]
+        ],
+        "jue": [
+          [
+            "11:00",
+            "20:30"
+          ]
+        ],
+        "vie": [
+          [
+            "11:00",
+            "20:30"
+          ]
+        ],
+        "sab": [
+          [
+            "11:00",
+            "20:45"
+          ]
+        ],
+        "dom": []
+      },
+      "horarioFiable": true,
+      "_notaInterna": "Misma marca que Soul (Canuda), local distinto. Verificar criterio.",
+      "estadoVerificacion": "Verificada"
+    },
+    {
+      "id": "arteporvo",
+      "nombre": "ARTEPORVO",
+      "tipo": "compra",
+      "sector": "moda",
+      "direccion": "Ciutat Vella, 08002 SecretRoom, Barcelona",
+      "barrio": "Ciutat Vella / Gótic",
+      "lat": 41.379398,
+      "lon": 2.1779752,
+      "telefono": "",
+      "email": "",
+      "web": "https://arteporvo.com",
+      "instagram": "https://instagram.com/arteporvo",
+      "presencia": "Media",
+      "valoracionGoogle": 4.8,
+      "criterio": "Diseño hiperlocal, piezas únicas de autor, producción sin explotación; arte+activismo textil.",
+      "fuente": "Tu Excel",
+      "horarioTexto": "L–S 10:30–20:30 · D cerrado",
+      "horario": {
+        "lun": [
+          [
+            "10:30",
+            "20:30"
+          ]
+        ],
+        "mar": [
+          [
+            "10:30",
+            "20:30"
+          ]
+        ],
+        "mie": [
+          [
+            "10:30",
+            "20:30"
+          ]
+        ],
+        "jue": [
+          [
+            "10:30",
+            "20:30"
+          ]
+        ],
+        "vie": [
+          [
+            "10:30",
+            "20:30"
+          ]
+        ],
+        "sab": [
+          [
+            "10:30",
+            "20:30"
+          ]
+        ],
+        "dom": []
+      },
+      "horarioFiable": true,
+      "_notaInterna": "Dirección vaga ('SecretRoom'); confirmar calle y número. Sin teléfono público.",
+      "estadoVerificacion": "Verificada"
+    },
+    {
+      "id": "soul-barcelona-canuda",
+      "nombre": "Soul Barcelona (Canuda)",
+      "tipo": "compra",
+      "sector": "moda",
+      "direccion": "C/ Canuda, 13",
+      "barrio": "Ciutat Vella / Gótic",
+      "lat": 41.3847494,
+      "lon": 2.1715624,
+      "telefono": "+34 933 02 66 75",
+      "email": "",
+      "web": "https://soul-barcelona.com",
+      "instagram": "https://instagram.com/soulbarcelona",
+      "presencia": "Media",
+      "valoracionGoogle": 4.3,
+      "criterio": "Tienda independiente de moda urbana/alternativa, fuera del circuito de cadenas.",
+      "fuente": "Tu Excel",
+      "horarioTexto": "L–V 11:00–20:30 · S 11:00–20:45 · D cerrado",
+      "horario": {
+        "lun": [
+          [
+            "11:00",
+            "20:30"
+          ]
+        ],
+        "mar": [
+          [
+            "11:00",
+            "20:30"
+          ]
+        ],
+        "mie": [
+          [
+            "11:00",
+            "20:30"
+          ]
+        ],
+        "jue": [
+          [
+            "11:00",
+            "20:30"
+          ]
+        ],
+        "vie": [
+          [
+            "11:00",
+            "20:30"
+          ]
+        ],
+        "sab": [
+          [
+            "11:00",
+            "20:45"
+          ]
+        ],
+        "dom": []
+      },
+      "horarioFiable": true,
+      "_notaInterna": "Moda alternativa que revende marcas (no productor propio). Verificar criterio.",
+      "estadoVerificacion": "Verificada"
+    },
+    {
+      "id": "ktu-barcelona",
+      "nombre": "Ktu Barcelona",
+      "tipo": "compra",
+      "sector": "moda",
+      "direccion": "Carrer d'Astúries, 2",
+      "barrio": "Gràcia",
+      "lat": 41.4025081,
+      "lon": 2.1528989,
+      "telefono": "+34 931 64 22 72",
+      "email": "",
+      "web": "https://ktubarcelona.com",
+      "instagram": "https://instagram.com/ktubarcelona",
+      "presencia": "Media",
+      "valoracionGoogle": 4.5,
+      "criterio": "Concept store independiente de moda de autor.",
+      "fuente": "Tu Excel",
+      "horarioTexto": "L–J 10:30–15:00 / 16:00–20:30 · V–S 10:30–20:30 · D cerrado",
+      "horario": {
+        "lun": [
+          [
+            "10:30",
+            "15:00"
+          ],
+          [
+            "16:00",
+            "20:30"
+          ]
+        ],
+        "mar": [
+          [
+            "10:30",
+            "15:00"
+          ],
+          [
+            "16:00",
+            "20:30"
+          ]
+        ],
+        "mie": [
+          [
+            "10:30",
+            "15:00"
+          ],
+          [
+            "16:00",
+            "20:30"
+          ]
+        ],
+        "jue": [
+          [
+            "10:30",
+            "15:00"
+          ],
+          [
+            "16:00",
+            "20:30"
+          ]
+        ],
+        "vie": [
+          [
+            "10:30",
+            "20:30"
+          ]
+        ],
+        "sab": [
+          [
+            "10:30",
+            "20:30"
+          ]
+        ],
+        "dom": []
+      },
+      "horarioFiable": true,
+      "_notaInterna": "Yo la había DESCARTADO (multimarca/concept). La incluyes tú → decide criterio.",
+      "estadoVerificacion": "Verificada"
+    },
+    {
+      "id": "olokuti",
+      "nombre": "Olokuti",
+      "tipo": "compra",
+      "sector": "moda",
+      "direccion": "Carrer d'Astúries, 38",
+      "barrio": "Gràcia",
+      "lat": 41.4035727,
+      "lon": 2.1547339,
+      "telefono": "+34 932 17 00 70",
+      "email": "",
+      "web": "https://olokuti.com",
+      "instagram": "https://instagram.com/olokuti",
+      "presencia": "Alta",
+      "valoracionGoogle": 4.4,
+      "criterio": "Tienda eco (pilares Eco/Bio/Fair/Local), 'made in Barcelona'; consumo responsable y comercio justo.",
+      "fuente": "Tu Excel",
+      "horarioTexto": "L–S 10:00–21:00 · D cerrado",
+      "horario": {
+        "lun": [
+          [
+            "10:00",
+            "21:00"
+          ]
+        ],
+        "mar": [
+          [
+            "10:00",
+            "21:00"
+          ]
+        ],
+        "mie": [
+          [
+            "10:00",
+            "21:00"
+          ]
+        ],
+        "jue": [
+          [
+            "10:00",
+            "21:00"
+          ]
+        ],
+        "vie": [
+          [
+            "10:00",
+            "21:00"
+          ]
+        ],
+        "sab": [
+          [
+            "10:00",
+            "21:00"
+          ]
+        ],
+        "dom": []
+      },
+      "horarioFiable": true,
+      "_notaInterna": "Es 'general store' eco (ropa + hogar + alimentación). Encaja en sostenible/local; no es solo ropa.",
+      "estadoVerificacion": "Verificada"
+    },
+    {
+      "id": "pretty-good-concept-store",
+      "nombre": "Pretty Good Concept Store",
+      "tipo": "compra",
+      "sector": "moda",
+      "direccion": "Carrer del Profeta, 11",
+      "barrio": "Gràcia",
+      "lat": 41.4013757,
+      "lon": 2.1610836,
+      "telefono": "+34 692 63 58 84",
+      "email": "",
+      "web": "https://prettygood.es",
+      "instagram": "https://instagram.com/prettygood.es",
+      "presencia": "Media",
+      "valoracionGoogle": 4.9,
+      "criterio": "Concept store que visibiliza a pequeños creadores locales (regalo + moda).",
+      "fuente": "Tu Excel",
+      "horarioTexto": "L–S 11:00–20:00 · D cerrado",
+      "horario": {
+        "lun": [
+          [
+            "11:00",
+            "20:00"
+          ]
+        ],
+        "mar": [
+          [
+            "11:00",
+            "20:00"
+          ]
+        ],
+        "mie": [
+          [
+            "11:00",
+            "20:00"
+          ]
+        ],
+        "jue": [
+          [
+            "11:00",
+            "20:00"
+          ]
+        ],
+        "vie": [
+          [
+            "11:00",
+            "20:00"
+          ]
+        ],
+        "sab": [
+          [
+            "11:00",
+            "20:00"
+          ]
+        ],
+        "dom": []
+      },
+      "horarioFiable": true,
+      "_notaInterna": "Yo la había DESCARTADO (más concept/regalo que ropa de productor). La incluyes tú → decide criterio.",
+      "estadoVerificacion": "Verificada"
+    },
+    {
+      "id": "collell",
+      "nombre": "Collell",
+      "tipo": "compra",
+      "sector": "moda",
+      "direccion": "Carrer del Tajo, 69",
+      "barrio": "Horta-Guinardó",
+      "lat": 41.4294998,
+      "lon": 2.1603267,
+      "telefono": "+34 605 01 70 25",
+      "email": "",
+      "web": "https://collell.es",
+      "instagram": "https://instagram.com/collell_bcn",
+      "presencia": "Media",
+      "valoracionGoogle": 4.9,
+      "criterio": "Comercio de barrio con firmas éticas y responsables.",
+      "fuente": "Tu Excel",
+      "horarioTexto": "L–V 10:00–14:00 / 17:00–20:00 · S 10:00–14:00 · D cerrado",
+      "horario": {
+        "lun": [
+          [
+            "10:00",
+            "14:00"
+          ],
+          [
+            "17:00",
+            "20:00"
+          ]
+        ],
+        "mar": [
+          [
+            "10:00",
+            "14:00"
+          ],
+          [
+            "17:00",
+            "20:00"
+          ]
+        ],
+        "mie": [
+          [
+            "10:00",
+            "14:00"
+          ],
+          [
+            "17:00",
+            "20:00"
+          ]
+        ],
+        "jue": [
+          [
+            "10:00",
+            "14:00"
+          ],
+          [
+            "17:00",
+            "20:00"
+          ]
+        ],
+        "vie": [
+          [
+            "10:00",
+            "14:00"
+          ],
+          [
+            "17:00",
+            "20:00"
+          ]
+        ],
+        "sab": [
+          [
+            "10:00",
+            "14:00"
+          ]
+        ],
+        "dom": []
+      },
+      "horarioFiable": true,
+      "_notaInterna": "Yo la había DESCARTADO (multimarca de barrio). La incluyes tú → decide criterio.",
+      "estadoVerificacion": "Verificada"
+    },
+    {
+      "id": "abans-morta-que-senzilla",
+      "nombre": "Abans Morta que Senzilla",
+      "tipo": "compra",
+      "sector": "moda",
+      "direccion": "Carrer Gran de Sant Andreu, 259",
+      "barrio": "Sant Andreu",
+      "lat": 41.43552,
+      "lon": 2.1896087,
+      "telefono": "",
+      "email": "",
+      "web": "",
+      "instagram": "https://instagram.com/abansmortaksenzillabotiga",
+      "presencia": "Media",
+      "valoracionGoogle": 4.8,
+      "criterio": "Boutique con marcas locales; reseñas citan certificación sostenible/ética y km0.",
+      "fuente": "Tu Excel",
+      "horarioTexto": "L–S 10:00–14:00 / 17:00–20:30 · D cerrado",
+      "horario": {
+        "lun": [
+          [
+            "10:00",
+            "14:00"
+          ],
+          [
+            "17:00",
+            "20:30"
+          ]
+        ],
+        "mar": [
+          [
+            "10:00",
+            "14:00"
+          ],
+          [
+            "17:00",
+            "20:30"
+          ]
+        ],
+        "mie": [
+          [
+            "10:00",
+            "14:00"
+          ],
+          [
+            "17:00",
+            "20:30"
+          ]
+        ],
+        "jue": [
+          [
+            "10:00",
+            "14:00"
+          ],
+          [
+            "17:00",
+            "20:30"
+          ]
+        ],
+        "vie": [
+          [
+            "10:00",
+            "14:00"
+          ],
+          [
+            "17:00",
+            "20:30"
+          ]
+        ],
+        "sab": [
+          [
+            "10:00",
+            "14:00"
+          ],
+          [
+            "17:00",
+            "20:30"
+          ]
+        ],
+        "dom": []
+      },
+      "horarioFiable": true,
+      "_notaInterna": "Sin teléfono público.",
+      "estadoVerificacion": "Verificada"
+    },
+    {
+      "id": "annatres",
+      "nombre": "Annatres",
+      "tipo": "compra",
+      "sector": "moda",
+      "direccion": "Plaça del Mercadal, 14",
+      "barrio": "Sant Andreu",
+      "lat": 41.434593,
+      "lon": 2.1881033,
+      "telefono": "+34 933 45 11 49",
+      "email": "",
+      "web": "https://annatresmoda.com",
+      "instagram": "https://instagram.com/annatresmoda",
+      "presencia": "Media",
+      "valoracionGoogle": 4.7,
+      "criterio": "Boutique multimarca independiente de proximidad.",
+      "fuente": "Tu Excel",
+      "horarioTexto": "L–V 9:00–14:00 / 17:00–20:00 · S 10:00–14:00 · D cerrado",
+      "horario": {
+        "lun": [
+          [
+            "9:00",
+            "14:00"
+          ],
+          [
+            "17:00",
+            "20:00"
+          ]
+        ],
+        "mar": [
+          [
+            "9:00",
+            "14:00"
+          ],
+          [
+            "17:00",
+            "20:00"
+          ]
+        ],
+        "mie": [
+          [
+            "9:00",
+            "14:00"
+          ],
+          [
+            "17:00",
+            "20:00"
+          ]
+        ],
+        "jue": [
+          [
+            "9:00",
+            "14:00"
+          ],
+          [
+            "17:00",
+            "20:00"
+          ]
+        ],
+        "vie": [
+          [
+            "9:00",
+            "14:00"
+          ],
+          [
+            "17:00",
+            "20:00"
+          ]
+        ],
+        "sab": [
+          [
+            "10:00",
+            "14:00"
+          ]
+        ],
+        "dom": []
+      },
+      "horarioFiable": true,
+      "_notaInterna": "Multimarca de proximidad; no marca propia/sostenible. Verificar criterio.",
+      "estadoVerificacion": "Verificada"
+    },
+    {
+      "id": "silvia-moda-unisex-i-complements",
+      "nombre": "Sílvia Moda Unisex i Complements",
+      "tipo": "compra",
+      "sector": "moda",
+      "direccion": "Carrer de Julián Besteiro, 12",
+      "barrio": "Sant Martí",
+      "lat": 41.4159183,
+      "lon": 2.197653,
+      "telefono": "+34 933 08 29 44",
+      "email": "",
+      "web": "",
+      "instagram": "",
+      "presencia": "Ninguna",
+      "valoracionGoogle": 3.7,
+      "criterio": "Pequeño comercio independiente histórico (unisex).",
+      "fuente": "Tu Excel",
+      "horarioTexto": "⚠ No fiable ('Abierto 24h' = error de Google; tienda histórica desde 1965)",
+      "horario": {
+        "lun": null,
+        "mar": null,
+        "mie": null,
+        "jue": null,
+        "vie": null,
+        "sab": null,
+        "dom": null
+      },
+      "horarioFiable": false,
+      "_notaInterna": "Horario 'Abierto 24h' es un error de Google; verificar horario real.",
+      "estadoVerificacion": "Verificada"
+    },
+    {
+      "id": "modes-laia",
+      "nombre": "Modes Laia",
+      "tipo": "compra",
+      "sector": "moda",
+      "direccion": "Carrer de Rogent, 51 Bis",
+      "barrio": "Sant Martí / Clot",
+      "lat": 41.4106252,
+      "lon": 2.1831264,
+      "telefono": "+34 934 36 99 55",
+      "email": "",
+      "web": "",
+      "instagram": "",
+      "presencia": "Ninguna",
+      "valoracionGoogle": 4.7,
+      "criterio": "Comercio textil de barrio, consumo local.",
+      "fuente": "Tu Excel",
+      "horarioTexto": "L–V 10:00–13:45 / 17:00–20:00 · S 10:00–14:00 · D cerrado",
+      "horario": {
+        "lun": [
+          [
+            "10:00",
+            "13:45"
+          ],
+          [
+            "17:00",
+            "20:00"
+          ]
+        ],
+        "mar": [
+          [
+            "10:00",
+            "13:45"
+          ],
+          [
+            "17:00",
+            "20:00"
+          ]
+        ],
+        "mie": [
+          [
+            "10:00",
+            "13:45"
+          ],
+          [
+            "17:00",
+            "20:00"
+          ]
+        ],
+        "jue": [
+          [
+            "10:00",
+            "13:45"
+          ],
+          [
+            "17:00",
+            "20:00"
+          ]
+        ],
+        "vie": [
+          [
+            "10:00",
+            "13:45"
+          ],
+          [
+            "17:00",
+            "20:00"
+          ]
+        ],
+        "sab": [
+          [
+            "10:00",
+            "14:00"
+          ]
+        ],
+        "dom": []
+      },
+      "horarioFiable": true,
+      "_notaInterna": "Nombre: tú 'Modas Laia' / Google 'Modes Laia' (catalán).",
+      "estadoVerificacion": "Verificada"
+    },
+    {
+      "id": "wings-moda-barcelona",
+      "nombre": "Wings Moda Barcelona",
+      "tipo": "compra",
+      "sector": "moda",
+      "direccion": "Carrer de Rogent, 28",
+      "barrio": "Sant Martí / Clot",
+      "lat": 41.4090099,
+      "lon": 2.1855124,
+      "telefono": "+34 935 13 22 95",
+      "email": "",
+      "web": "",
+      "instagram": "https://instagram.com/wings_barcelona",
+      "presencia": "Media",
+      "valoracionGoogle": 4.9,
+      "criterio": "Boutique independiente de proximidad, sin franquicias.",
+      "fuente": "Tu Excel",
+      "horarioTexto": "L 10:00–14:00 · M–S 10:00–14:00 / 17:00–21:00 · D cerrado",
+      "horario": {
+        "lun": [
+          [
+            "10:00",
+            "14:00"
+          ]
+        ],
+        "mar": [
+          [
+            "10:00",
+            "14:00"
+          ],
+          [
+            "17:00",
+            "21:00"
+          ]
+        ],
+        "mie": [
+          [
+            "10:00",
+            "14:00"
+          ],
+          [
+            "17:00",
+            "21:00"
+          ]
+        ],
+        "jue": [
+          [
+            "10:00",
+            "14:00"
+          ],
+          [
+            "17:00",
+            "21:00"
+          ]
+        ],
+        "vie": [
+          [
+            "10:00",
+            "14:00"
+          ],
+          [
+            "17:00",
+            "21:00"
+          ]
+        ],
+        "sab": [
+          [
+            "10:00",
+            "14:00"
+          ],
+          [
+            "17:00",
+            "21:00"
+          ]
+        ],
+        "dom": []
+      },
+      "horarioFiable": true,
+      "_notaInterna": "Google la define como MULTIMARCA de mujer → encaja en 'no franquicia/local', pero NO es marca propia ni sello sostenible. Verificar criterio.",
+      "estadoVerificacion": "Verificada"
+    },
+    {
+      "id": "puna-barcelona",
+      "nombre": "Puna Barcelona",
+      "tipo": "compra",
+      "sector": "moda",
+      "direccion": "Carrer del Doctor Trueta, 236",
+      "barrio": "Sant Martí / Poblenou",
+      "lat": 41.3993591,
+      "lon": 2.2047222,
+      "telefono": "+34 611 50 27 28",
+      "email": "",
+      "web": "https://punabarcelona.es",
+      "instagram": "https://instagram.com/punabarcelona",
+      "presencia": "Media",
+      "valoracionGoogle": 5,
+      "criterio": "Producciones controladas y diseño propio slow fashion.",
+      "fuente": "Tu Excel",
+      "horarioTexto": "L–V 11:00–19:00 · S–D cerrado",
+      "horario": {
+        "lun": [
+          [
+            "11:00",
+            "19:00"
+          ]
+        ],
+        "mar": [
+          [
+            "11:00",
+            "19:00"
+          ]
+        ],
+        "mie": [
+          [
+            "11:00",
+            "19:00"
+          ]
+        ],
+        "jue": [
+          [
+            "11:00",
+            "19:00"
+          ]
+        ],
+        "vie": [
+          [
+            "11:00",
+            "19:00"
+          ]
+        ],
+        "sab": [],
+        "dom": []
+      },
+      "horarioFiable": true,
+      "_notaInterna": "Existe (Google ✓). Web/IG de tu Excel: verificar.",
+      "estadoVerificacion": "Verificada"
+    },
+    {
+      "id": "colmado",
+      "nombre": "Colmado",
+      "tipo": "compra",
+      "sector": "moda",
+      "direccion": "C/ del Brosolí, 5",
+      "barrio": "Ciutat Vella / El Born",
+      "lat": 41.3841403,
+      "lon": 2.180653,
+      "telefono": "",
+      "email": "",
+      "web": "",
+      "instagram": "",
+      "presencia": "Baja-Media",
+      "valoracionGoogle": 4.5,
+      "criterio": "Concept store de moda con diseño de autor (multimarca de pequeño diseño).",
+      "fuente": "Claude",
+      "horarioTexto": "L–V 11:30–20:00 · S 12:00–20:00 · D cerrado",
+      "horario": {
+        "lun": [
+          [
+            "11:30",
+            "20:00"
+          ]
+        ],
+        "mar": [
+          [
+            "11:30",
+            "20:00"
+          ]
+        ],
+        "mie": [
+          [
+            "11:30",
+            "20:00"
+          ]
+        ],
+        "jue": [
+          [
+            "11:30",
+            "20:00"
+          ]
+        ],
+        "vie": [
+          [
+            "11:30",
+            "20:00"
+          ]
+        ],
+        "sab": [
+          [
+            "12:00",
+            "20:00"
+          ]
+        ],
+        "dom": []
+      },
+      "horarioFiable": true,
+      "_notaInterna": "No en tu Excel. Multimarca, no productor único.",
+      "estadoVerificacion": "Verificada"
+    },
+    {
+      "id": "david-valls",
+      "nombre": "david valls",
+      "tipo": "compra",
+      "sector": "moda",
+      "direccion": "Pg. del Born, 19",
+      "barrio": "Ciutat Vella / El Born",
+      "lat": 41.3848937,
+      "lon": 2.1825813,
+      "telefono": "+34 934 08 87 33",
+      "email": "",
+      "web": "",
+      "instagram": "",
+      "presencia": "Media",
+      "valoracionGoogle": 4.3,
+      "criterio": "Diseñador español con marca y patronaje propios; piezas de autor.",
+      "fuente": "Claude",
+      "horarioTexto": "L–S 11:00–21:00 · D 12:00–20:00",
+      "horario": {
+        "lun": [
+          [
+            "11:00",
+            "21:00"
+          ]
+        ],
+        "mar": [
+          [
+            "11:00",
+            "21:00"
+          ]
+        ],
+        "mie": [
+          [
+            "11:00",
+            "21:00"
+          ]
+        ],
+        "jue": [
+          [
+            "11:00",
+            "21:00"
+          ]
+        ],
+        "vie": [
+          [
+            "11:00",
+            "21:00"
+          ]
+        ],
+        "sab": [
+          [
+            "11:00",
+            "21:00"
+          ]
+        ],
+        "dom": [
+          [
+            "12:00",
+            "20:00"
+          ]
+        ]
+      },
+      "horarioFiable": true,
+      "_notaInterna": "No en tu Excel.",
+      "estadoVerificacion": "Verificada"
+    },
+    {
+      "id": "thinking-mu",
+      "nombre": "Thinking Mu",
+      "tipo": "compra",
+      "sector": "moda",
+      "direccion": "C/ del Rosselló, 220",
+      "barrio": "Eixample Dreta",
+      "lat": 41.3945799,
+      "lon": 2.1594908,
+      "telefono": "+34 691 18 82 74",
+      "email": "",
+      "web": "https://thinkingmu.com",
+      "instagram": "https://instagram.com/thinkingmu",
+      "presencia": "Alta",
+      "valoracionGoogle": 4.4,
+      "criterio": "Marca barcelonesa de moda sostenible (2008); tejidos propios, algodón orgánico/cáñamo.",
+      "fuente": "Claude",
+      "horarioTexto": "L 10:00–20:30 · M–S 11:00–20:30 · D 12:00–19:00",
+      "horario": {
+        "lun": [
+          [
+            "10:00",
+            "20:30"
+          ]
+        ],
+        "mar": [
+          [
+            "11:00",
+            "20:30"
+          ]
+        ],
+        "mie": [
+          [
+            "11:00",
+            "20:30"
+          ]
+        ],
+        "jue": [
+          [
+            "11:00",
+            "20:30"
+          ]
+        ],
+        "vie": [
+          [
+            "11:00",
+            "20:30"
+          ]
+        ],
+        "sab": [
+          [
+            "11:00",
+            "20:30"
+          ]
+        ],
+        "dom": [
+          [
+            "12:00",
+            "19:00"
+          ]
+        ]
+      },
+      "horarioFiable": true,
+      "_notaInterna": "No en tu Excel. Producción repartida Europa/India/China con meta km0 (diseño local, no 100% España).",
+      "estadoVerificacion": "Verificada"
+    },
+    {
+      "id": "antidoto28",
+      "nombre": "Antidoto28",
+      "tipo": "compra",
+      "sector": "moda",
+      "direccion": "C/ de Villarroel, 11",
+      "barrio": "Esquerra de l'Eixample",
+      "lat": 41.3807496,
+      "lon": 2.1624925,
+      "telefono": "+34 672 96 41 77",
+      "email": "",
+      "web": "",
+      "instagram": "",
+      "presencia": "Baja-Media",
+      "valoracionGoogle": 4.7,
+      "criterio": "Diseño y serigrafía propios: ropa estampada hecha a mano y de edición limitada (diseñador Carlos).",
+      "fuente": "Claude",
+      "horarioTexto": "L–J 11:00–14:30 / 16:30–20:30 · V 11:00–14:30 · S 11:00–14:30 / 16:30–20:30 · D cerrado",
+      "horario": {
+        "lun": [
+          [
+            "11:00",
+            "14:30"
+          ],
+          [
+            "16:30",
+            "20:30"
+          ]
+        ],
+        "mar": [
+          [
+            "11:00",
+            "14:30"
+          ],
+          [
+            "16:30",
+            "20:30"
+          ]
+        ],
+        "mie": [
+          [
+            "11:00",
+            "14:30"
+          ],
+          [
+            "16:30",
+            "20:30"
+          ]
+        ],
+        "jue": [
+          [
+            "11:00",
+            "14:30"
+          ],
+          [
+            "16:30",
+            "20:30"
+          ]
+        ],
+        "vie": [
+          [
+            "11:00",
+            "14:30"
+          ]
+        ],
+        "sab": [
+          [
+            "11:00",
+            "14:30"
+          ],
+          [
+            "16:30",
+            "20:30"
+          ]
+        ],
+        "dom": []
+      },
+      "horarioFiable": true,
+      "_notaInterna": "No en tu Excel.",
+      "estadoVerificacion": "Verificada"
+    },
+    {
+      "id": "boo",
+      "nombre": "BOO",
+      "tipo": "compra",
+      "sector": "moda",
+      "direccion": "C/ de Bonavista, 2",
+      "barrio": "Gràcia",
+      "lat": 41.3976492,
+      "lon": 2.1589271,
+      "telefono": "+34 933 68 14 58",
+      "email": "",
+      "web": "",
+      "instagram": "",
+      "presencia": "Media",
+      "valoracionGoogle": 4.3,
+      "criterio": "Selector multimarca de moda sostenible de calidad (no productor propio).",
+      "fuente": "Claude",
+      "horarioTexto": "L–V 11:00–20:30 · S 11:00–15:00 / 16:30–20:30 · D cerrado",
+      "horario": {
+        "lun": [
+          [
+            "11:00",
+            "20:30"
+          ]
+        ],
+        "mar": [
+          [
+            "11:00",
+            "20:30"
+          ]
+        ],
+        "mie": [
+          [
+            "11:00",
+            "20:30"
+          ]
+        ],
+        "jue": [
+          [
+            "11:00",
+            "20:30"
+          ]
+        ],
+        "vie": [
+          [
+            "11:00",
+            "20:30"
+          ]
+        ],
+        "sab": [
+          [
+            "11:00",
+            "15:00"
+          ],
+          [
+            "16:30",
+            "20:30"
+          ]
+        ],
+        "dom": []
+      },
+      "horarioFiable": true,
+      "_notaInterna": "No en tu Excel.",
+      "estadoVerificacion": "Verificada"
+    },
+    {
+      "id": "firiri-tienda-skfk",
+      "nombre": "Firiri (tienda SKFK)",
+      "tipo": "compra",
+      "sector": "moda",
+      "direccion": "C/ de Verdi, 14",
+      "barrio": "Gràcia",
+      "lat": 41.4034821,
+      "lon": 2.1574835,
+      "telefono": "+34 938 32 80 15",
+      "email": "",
+      "web": "https://skfk.com (verificar)",
+      "instagram": "",
+      "presencia": "Baja",
+      "valoracionGoogle": 5,
+      "criterio": "Punto de venta de SKFK (marca de moda ética/sostenible, algodón orgánico) + selección sostenible.",
+      "fuente": "Claude",
+      "horarioTexto": "L–S 10:30–14:30 / 16:30–20:30 · D cerrado",
+      "horario": {
+        "lun": [
+          [
+            "10:30",
+            "14:30"
+          ],
+          [
+            "16:30",
+            "20:30"
+          ]
+        ],
+        "mar": [
+          [
+            "10:30",
+            "14:30"
+          ],
+          [
+            "16:30",
+            "20:30"
+          ]
+        ],
+        "mie": [
+          [
+            "10:30",
+            "14:30"
+          ],
+          [
+            "16:30",
+            "20:30"
+          ]
+        ],
+        "jue": [
+          [
+            "10:30",
+            "14:30"
+          ],
+          [
+            "16:30",
+            "20:30"
+          ]
+        ],
+        "vie": [
+          [
+            "10:30",
+            "14:30"
+          ],
+          [
+            "16:30",
+            "20:30"
+          ]
+        ],
+        "sab": [
+          [
+            "10:30",
+            "14:30"
+          ],
+          [
+            "16:30",
+            "20:30"
+          ]
+        ],
+        "dom": []
+      },
+      "horarioFiable": true,
+      "_notaInterna": "Verificar relación exacta Firiri/SKFK.",
+      "estadoVerificacion": "Verificada"
+    },
+    {
+      "id": "japamala-friends",
+      "nombre": "Japamala & Friends",
+      "tipo": "compra",
+      "sector": "moda",
+      "direccion": "A confirmar: Google → C/ Astúries 7 ; marca → Torrent de l'Olla 143",
+      "barrio": "Gràcia",
+      "lat": 41.4027175,
+      "lon": 2.1530234,
+      "telefono": "+34 654 10 81 52",
+      "email": "",
+      "web": "",
+      "instagram": "",
+      "presencia": "Media",
+      "valoracionGoogle": 4.9,
+      "criterio": "Diseños de autora (Mirta) confeccionados localmente.",
+      "fuente": "Claude",
+      "horarioTexto": "L–S 10:30–20:30 · D cerrado",
+      "horario": {
+        "lun": [
+          [
+            "10:30",
+            "20:30"
+          ]
+        ],
+        "mar": [
+          [
+            "10:30",
+            "20:30"
+          ]
+        ],
+        "mie": [
+          [
+            "10:30",
+            "20:30"
+          ]
+        ],
+        "jue": [
+          [
+            "10:30",
+            "20:30"
+          ]
+        ],
+        "vie": [
+          [
+            "10:30",
+            "20:30"
+          ]
+        ],
+        "sab": [
+          [
+            "10:30",
+            "20:30"
+          ]
+        ],
+        "dom": []
+      },
+      "horarioFiable": true,
+      "_notaInterna": "⚠ Dirección con conflicto entre fuentes (en Google coincide con la tienda Instinto Gràcia).",
+      "estadoVerificacion": "Verificada"
+    },
+    {
+      "id": "malahierba",
+      "nombre": "Malahierba",
+      "tipo": "compra",
+      "sector": "moda",
+      "direccion": "C/ de Bonavista, 26",
+      "barrio": "Gràcia",
+      "lat": 41.39869,
+      "lon": 2.1604662,
+      "telefono": "+34 935 13 58 18",
+      "email": "",
+      "web": "",
+      "instagram": "",
+      "presencia": "Media",
+      "valoracionGoogle": 4.8,
+      "criterio": "Marca propia con producción declarada en España; diseño propio.",
+      "fuente": "Claude",
+      "horarioTexto": "L–V 11:00–14:00 / 16:00–20:30 · S 11:00–14:00 / 17:00–20:30 · D cerrado",
+      "horario": {
+        "lun": [
+          [
+            "11:00",
+            "14:00"
+          ],
+          [
+            "16:00",
+            "20:30"
+          ]
+        ],
+        "mar": [
+          [
+            "11:00",
+            "14:00"
+          ],
+          [
+            "16:00",
+            "20:30"
+          ]
+        ],
+        "mie": [
+          [
+            "11:00",
+            "14:00"
+          ],
+          [
+            "16:00",
+            "20:30"
+          ]
+        ],
+        "jue": [
+          [
+            "11:00",
+            "14:00"
+          ],
+          [
+            "16:00",
+            "20:30"
+          ]
+        ],
+        "vie": [
+          [
+            "11:00",
+            "14:00"
+          ],
+          [
+            "16:00",
+            "20:30"
+          ]
+        ],
+        "sab": [
+          [
+            "11:00",
+            "14:00"
+          ],
+          [
+            "17:00",
+            "20:30"
+          ]
+        ],
+        "dom": []
+      },
+      "horarioFiable": true,
+      "_notaInterna": "No en tu Excel. Una reseña cuestiona el 'made in Spain' en calzado → verificar.",
+      "estadoVerificacion": "Verificada"
+    },
+    {
+      "id": "twothirds",
+      "nombre": "TWOTHIRDS",
+      "tipo": "compra",
+      "sector": "moda",
+      "direccion": "C/ de Morales, 27 (Les Corts) — ⚠ es SEDE/oficina, confirmar tienda física al público",
+      "barrio": "Les Corts",
+      "lat": 41.3885142,
+      "lon": 2.1406126,
+      "telefono": "+34 934 12 53 71",
+      "email": "",
+      "web": "https://twothirds.com",
+      "instagram": "https://instagram.com/twothirds_bcn",
+      "presencia": "Alta",
+      "valoracionGoogle": 4.7,
+      "criterio": "Marca barcelonesa B Corp, pionera del modelo PRE-ORDER; diseño en Barcelona, producción Portugal/España.",
+      "fuente": "Claude",
+      "horarioTexto": "L–J 9:00–17:30 · V 9:00–14:30 · S–D cerrado (horario de oficina)",
+      "horario": {
+        "lun": [
+          [
+            "9:00",
+            "17:30"
+          ]
+        ],
+        "mar": [
+          [
+            "9:00",
+            "17:30"
+          ]
+        ],
+        "mie": [
+          [
+            "9:00",
+            "17:30"
+          ]
+        ],
+        "jue": [
+          [
+            "9:00",
+            "17:30"
+          ]
+        ],
+        "vie": [
+          [
+            "9:00",
+            "14:30"
+          ]
+        ],
+        "sab": [],
+        "dom": []
+      },
+      "horarioFiable": true,
+      "_notaInterna": "La dirección es su sede; confirmar si tiene tienda física abierta (venden sobre todo online).",
+      "estadoVerificacion": "Verificada"
+    },
+    {
+      "id": "instinto-sant-antoni",
+      "nombre": "Instinto (Sant Antoni)",
+      "tipo": "compra",
+      "sector": "moda",
+      "direccion": "C/ de Tamarit, 164  ·  (2ª tienda en Gràcia, C/ Astúries 7)",
+      "barrio": "Sant Antoni (Eixample)",
+      "lat": 41.3799083,
+      "lon": 2.1628215,
+      "telefono": "+34 931 25 43 24",
+      "email": "",
+      "web": "https://instintobcn.com",
+      "instagram": "",
+      "presencia": "Media",
+      "valoracionGoogle": 4.8,
+      "criterio": "Marca propia 100% diseñada y confeccionada en su taller de Barcelona; slow fashion, equipo de mujeres.",
+      "fuente": "Claude",
+      "horarioTexto": "L–V 10:00–15:00 / 16:00–20:30 · S 10:00–15:30 / 16:00–20:30 · D cerrado",
+      "horario": {
+        "lun": [
+          [
+            "10:00",
+            "15:00"
+          ],
+          [
+            "16:00",
+            "20:30"
+          ]
+        ],
+        "mar": [
+          [
+            "10:00",
+            "15:00"
+          ],
+          [
+            "16:00",
+            "20:30"
+          ]
+        ],
+        "mie": [
+          [
+            "10:00",
+            "15:00"
+          ],
+          [
+            "16:00",
+            "20:30"
+          ]
+        ],
+        "jue": [
+          [
+            "10:00",
+            "15:00"
+          ],
+          [
+            "16:00",
+            "20:30"
+          ]
+        ],
+        "vie": [
+          [
+            "10:00",
+            "15:00"
+          ],
+          [
+            "16:00",
+            "20:30"
+          ]
+        ],
+        "sab": [
+          [
+            "10:00",
+            "15:30"
+          ],
+          [
+            "16:00",
+            "20:30"
+          ]
+        ],
+        "dom": []
+      },
+      "horarioFiable": true,
+      "_notaInterna": "No estaba en tu Excel. Encaje fuerte.",
+      "estadoVerificacion": "Verificada"
+    },
+    {
+      "id": "owl-moda-sostenible-urbana",
+      "nombre": "OWL – Moda sostenible urbana",
+      "tipo": "compra",
+      "sector": "moda",
+      "direccion": "C/ de la Ciutat de Granada, 65 (bajos)",
+      "barrio": "Sant Martí / Poblenou",
+      "lat": 41.3991865,
+      "lon": 2.1967907,
+      "telefono": "",
+      "email": "",
+      "web": "",
+      "instagram": "",
+      "presencia": "Ninguna",
+      "valoracionGoogle": 5,
+      "criterio": "Moda sostenible urbana, tejidos de calidad. Sin rastro digital → caso 'invisible' prioritario.",
+      "fuente": "Claude",
+      "horarioTexto": "L–V 10:30–20:00 · S–D cerrado",
+      "horario": {
+        "lun": [
+          [
+            "10:30",
+            "20:00"
+          ]
+        ],
+        "mar": [
+          [
+            "10:30",
+            "20:00"
+          ]
+        ],
+        "mie": [
+          [
+            "10:30",
+            "20:00"
+          ]
+        ],
+        "jue": [
+          [
+            "10:30",
+            "20:00"
+          ]
+        ],
+        "vie": [
+          [
+            "10:30",
+            "20:00"
+          ]
+        ],
+        "sab": [],
+        "dom": []
+      },
+      "horarioFiable": true,
+      "_notaInterna": "No en tu Excel. Sin web/IG ni teléfono localizable.",
+      "estadoVerificacion": "Verificada"
+    },
+    {
+      "id": "une-concept",
+      "nombre": "UNE Concept",
+      "tipo": "compra",
+      "sector": "moda",
+      "direccion": "C/ de Marià Cubí, 17",
+      "barrio": "Sarrià-Sant Gervasi",
+      "lat": 41.3987247,
+      "lon": 2.1505119,
+      "telefono": "+34 640 70 18 92",
+      "email": "",
+      "web": "",
+      "instagram": "",
+      "presencia": "Baja-Media",
+      "valoracionGoogle": 4.8,
+      "criterio": "Marca propia diseñada por Carme; piezas de autor.",
+      "fuente": "Claude",
+      "horarioTexto": "L–X 11:00–14:00 / 16:00–20:00 · J 16:00–20:00 · V 11:00–14:00 / 16:00–20:00 · S–D cerrado",
+      "horario": {
+        "lun": [
+          [
+            "11:00",
+            "14:00"
+          ],
+          [
+            "16:00",
+            "20:00"
+          ]
+        ],
+        "mar": [
+          [
+            "11:00",
+            "14:00"
+          ],
+          [
+            "16:00",
+            "20:00"
+          ]
+        ],
+        "mie": [
+          [
+            "11:00",
+            "14:00"
+          ],
+          [
+            "16:00",
+            "20:00"
+          ]
+        ],
+        "jue": [
+          [
+            "16:00",
+            "20:00"
+          ]
+        ],
+        "vie": [
+          [
+            "11:00",
+            "14:00"
+          ],
+          [
+            "16:00",
+            "20:00"
+          ]
+        ],
+        "sab": [],
+        "dom": []
+      },
+      "horarioFiable": true,
+      "_notaInterna": "Confirmar relación con Illa de Plata.",
+      "estadoVerificacion": "Verificada"
+    }
+  ]
+}

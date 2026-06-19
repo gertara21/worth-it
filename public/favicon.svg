@@ -1,0 +1,10 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="7" fill="#F6F1E6"/>
+  <rect x="3" y="4" width="22" height="18" rx="3" fill="white" stroke="#111111" stroke-width="1.5"/>
+  <path d="M25 13L29 9V17L25 13Z" fill="white" stroke="#111111" stroke-width="1.5" stroke-linejoin="round"/>
+  <circle cx="27" cy="13" r="1.5" fill="#111111"/>
+  <text x="6.5" y="13" font-family="sans-serif" font-weight="900" font-size="7" fill="#111111">W?</text>
+  <path d="M5 22 A9 9 0 0 1 23 22Z" fill="#F26122"/>
+  <line x1="7" y1="20.5" x2="21" y2="20.5" stroke="white" stroke-width="1.2"/>
+  <line x1="8.5" y1="22" x2="19.5" y2="22" stroke="white" stroke-width="1.2"/>
+</svg>

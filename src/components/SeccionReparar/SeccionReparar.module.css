@@ -1,0 +1,104 @@
+.wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 24px;
+  background: linear-gradient(170deg, var(--color-fondo) 0%, #fdf6e8 100%);
+}
+
+.inner {
+  max-width: 560px;
+  text-align: center;
+}
+
+.icono {
+  display: inline-flex;
+  width: 80px;
+  height: 80px;
+  align-items: center;
+  justify-content: center;
+  background: rgba(242, 97, 34, 0.1);
+  border-radius: 50%;
+  color: var(--color-primario);
+  margin-bottom: 24px;
+}
+
+.titulo {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--color-texto);
+}
+
+.subtitulo {
+  font-size: 17px;
+  color: var(--color-texto-suave);
+  line-height: 1.65;
+  margin-bottom: 40px;
+}
+
+.pildoras {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.pildora {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  background: var(--color-fondo-card);
+  border: 1.5px solid var(--color-borde);
+  border-radius: var(--radio-md);
+  padding: 18px;
+  color: var(--color-primario);
+}
+
+.pildora svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.pildora strong {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-texto);
+  margin-bottom: 6px;
+}
+
+.pildora p {
+  font-size: 14px;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.cta {
+  padding-top: 16px;
+}
+
+.cta p {
+  font-size: 15px;
+  margin-bottom: 14px;
+}
+
+.btnCta {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 28px;
+  border-radius: var(--radio-md);
+  background: var(--color-primario);
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+
+.btnCta:hover {
+  background: var(--color-primario-dark);
+  text-decoration: none;
+}
