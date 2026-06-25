@@ -155,53 +155,101 @@ function AppFilters() {
 
 function AppDetailPanel({ show }) {
   return (
+    /* Wrapper that animates width 0→420, squeezing the map */
     <div style={{
-      position: 'absolute', bottom: 0, left: 0, width: 360,
-      background: '#F5EFE5', borderTop: '1px solid #e8e1d6', borderRight: '1px solid #e8e1d6',
-      transform: `translateY(${show ? 0 : 101}%)`,
-      transition: 'transform 0.65s cubic-bezier(0.32,0.72,0,1)',
-      zIndex: 20, maxHeight: '80%', overflowY: 'auto',
-      fontFamily: "'Space Grotesk', sans-serif",
+      width: show ? 420 : 0,
+      flexShrink: 0,
+      overflow: 'hidden',
+      transition: 'width 0.65s cubic-bezier(0.32,0.72,0,1)',
+      borderLeft: show ? '1px solid #e8e1d6' : 'none',
     }}>
-      <div style={{ padding: '20px 20px 0', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-        <div>
-          <h2 style={{ fontSize: 20, fontWeight: 700, color: '#111', margin: 0 }}>Comado Shop</h2>
-          <div style={{ fontSize: 13, color: '#999', display: 'flex', alignItems: 'center', gap: 4, marginTop: 4 }}>
-            <PinIcon size={12} />El Raval
+      {/* Inner fixed-width scroll container */}
+      <div style={{
+        width: 420, height: '100%', overflowY: 'auto',
+        background: '#F5EFE5',
+        fontFamily: "'Space Grotesk', sans-serif",
+      }}>
+        {/* Header */}
+        <div style={{ padding: '20px 20px 0', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+          <div>
+            <h2 style={{ fontSize: 22, fontWeight: 700, color: '#111', margin: 0 }}>Comado Shop</h2>
+            <div style={{ fontSize: 13, color: '#999', display: 'flex', alignItems: 'center', gap: 4, marginTop: 5 }}>
+              <PinIcon size={12} />Ciutat Vella / El Raval
+            </div>
+          </div>
+          <div style={{ width: 32, height: 32, borderRadius: '50%', background: '#eee', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#666" strokeWidth="2.5">
+              <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
           </div>
         </div>
-        <div style={{ width: 30, height: 30, borderRadius: '50%', background: '#eee', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#666" strokeWidth="2.5">
-            <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
-          </svg>
-        </div>
-      </div>
-      <img src="https://files.catbox.moe/va7ttr.png" alt="" style={{ width: '100%', height: 160, objectFit: 'cover', marginTop: 16 }} />
-      <div style={{ padding: '16px 20px 24px' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 14 }}>
-          <span style={{ background: '#e8f5e9', color: '#2E7D32', fontSize: 12, fontWeight: 700, padding: '4px 10px', borderRadius: 8 }}>
-            ● Abierto ahora
-          </span>
-          <span style={{ fontSize: 13, color: '#FF6A1A', fontWeight: 700, display: 'flex', alignItems: 'center', gap: 3 }}>
-            <StarIcon size={13} /> 5.0
-          </span>
-        </div>
-        <div style={{ fontSize: 13, color: '#666', display: 'flex', alignItems: 'center', gap: 6, marginBottom: 16 }}>
-          <PinIcon size={14} />Carrer del Parlament, 24
-        </div>
-        <div style={{ background: '#fff', borderRadius: 10, padding: '12px 14px', marginBottom: 16, border: '1px solid #e8e1d6' }}>
-          <div style={{ fontSize: 11, fontWeight: 700, color: '#FF6A1A', textTransform: 'uppercase', letterSpacing: 0.8, marginBottom: 6 }}>
-            Por qué la elegimos
+
+        {/* Photo */}
+        <img src="https://files.catbox.moe/va7ttr.png" alt="Comado Shop" style={{ width: '100%', height: 200, objectFit: 'cover', marginTop: 16 }} />
+
+        <div style={{ padding: '18px 20px 28px' }}>
+          {/* Status + rating */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 14 }}>
+            <span style={{ background: '#f5f5f5', color: '#666', fontSize: 12, fontWeight: 700, padding: '4px 10px', borderRadius: 8, display: 'flex', alignItems: 'center', gap: 4 }}>
+              <span style={{ fontSize: 8 }}>●</span> Cerrado · abre 11:00
+            </span>
+            <span style={{ fontSize: 13, color: '#FF6A1A', fontWeight: 700, display: 'flex', alignItems: 'center', gap: 3 }}>
+              <StarIcon size={13} /> 4.9
+            </span>
           </div>
-          <div style={{ fontSize: 13, color: '#555', lineHeight: 1.65 }}>
-            Producción propia en Barcelona, materiales trazables y una filosofía de fondo: que la ropa dure más que una temporada.
+
+          {/* Address */}
+          <div style={{ fontSize: 13, color: '#666', display: 'flex', alignItems: 'center', gap: 6, marginBottom: 18 }}>
+            <PinIcon size={14} />Carrer dels Corders, 11
           </div>
-        </div>
-        <div style={{
-          background: '#111', color: '#fff', borderRadius: 12, padding: '13px 16px',
-          fontSize: 14, fontWeight: 600, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8,
-        }}>
-          <PinIcon size={16} />Cómo llegar
+
+          {/* Por qué la elegimos — styled like the real app */}
+          <div style={{
+            borderLeft: '3px solid #FF6A1A',
+            background: '#fff8f3',
+            borderRadius: '0 10px 10px 0',
+            padding: '14px 16px',
+            marginBottom: 20,
+          }}>
+            <div style={{ fontSize: 11, fontWeight: 700, color: '#FF6A1A', textTransform: 'uppercase', letterSpacing: 1, marginBottom: 8 }}>
+              Por qué la elegimos
+            </div>
+            <div style={{ fontSize: 14, color: '#444', lineHeight: 1.7 }}>
+              Marca propia nacida en Barcelona (2009); diseño y producción local, tejidos sostenibles, atemporal.
+            </div>
+          </div>
+
+          {/* Horario */}
+          <div style={{
+            background: '#fff', border: '1px solid #e8e1d6', borderRadius: 10,
+            padding: '12px 14px', marginBottom: 20,
+            display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+          }}>
+            <span style={{ fontSize: 13, color: '#555' }}>L-S 12:00–20:00 · D cerrado</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#999" strokeWidth="2">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </div>
+
+          {/* Contacto */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 20 }}>
+            {[
+              { icon: <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>, label: '+34 687 52 88 64' },
+              { icon: <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>, label: 'Sitio web' },
+            ].map(({ icon, label }) => (
+              <div key={label} style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: 14, color: '#444' }}>
+                <span style={{ color: '#888' }}>{icon}</span>{label}
+              </div>
+            ))}
+          </div>
+
+          {/* CTA */}
+          <div style={{
+            background: '#111', color: '#fff', borderRadius: 12, padding: '14px 16px',
+            fontSize: 14, fontWeight: 600, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8,
+          }}>
+            <PinIcon size={16} />Cómo llegar
+          </div>
         </div>
       </div>
     </div>
@@ -241,8 +289,8 @@ function AppScreen({ elapsed }) {
           })}
         </div>
 
-        {/* Right: map */}
-        <div style={{ flex: 1, position: 'relative', overflow: 'hidden' }}>
+        {/* Map */}
+        <div style={{ flex: 1, position: 'relative', overflow: 'hidden', minWidth: 0 }}>
           <iframe
             src="https://www.openstreetmap.org/export/embed.html?bbox=2.145,41.385,2.175,41.405&layer=mapnik"
             style={{ width: '100%', height: '100%', border: 'none', filter: 'invert(1) hue-rotate(180deg) brightness(0.85) saturate(0.8)' }}
@@ -264,7 +312,7 @@ function AppScreen({ elapsed }) {
           </div>
         </div>
 
-        {/* Detail panel slides up */}
+        {/* Right panel — slides in, squeezes the map */}
         <AppDetailPanel show={detailVisible} />
       </div>
     </div>
