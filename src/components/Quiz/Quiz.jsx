@@ -150,7 +150,7 @@ export default function Quiz({ mode = 'embedded', onGoToComprar }) {
           <span style={{ color: '#FF6A1A', fontWeight: 700, fontSize: '16px' }}>Worth It?</span>
         ) : (
           <img
-            src="https://files.catbox.moe/28094u.png"
+            src="https://files.catbox.moe/i8emat.png"
             alt="Worth It?"
             height="28"
             style={{ display: 'block' }}

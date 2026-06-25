@@ -83,6 +83,6 @@ export default function Cabecera({ seccionActiva, onSeccion, barcelonaTime }) {
 
 function LogoSVG() {
   return (
-    <img src="/logo.jpeg" alt="Worth It logo" height="36" style={{ display: 'block' }} />
+    <img src="https://files.catbox.moe/i8emat.png" alt="Worth It logo" height="36" style={{ display: 'block' }} />
   );
 }
