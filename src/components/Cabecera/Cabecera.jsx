@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { MapPin, Scissors, Users, HelpCircle, Menu, X } from 'lucide-react';
+import { MapPin, Scissors, Users, HelpCircle, Menu, X, Sparkles } from 'lucide-react';
 import { formatBarcelonaTime } from '../../utils/abierto';
 import s from './Cabecera.module.css';
 
@@ -8,6 +8,7 @@ const NAV = [
   { id: 'reparar',  label: 'Reparar',         Icon: Scissors   },
   { id: 'comunidad',label: 'Comunidad',       Icon: Users      },
   { id: 'elegimos', label: 'Cómo elegimos',   Icon: HelpCircle },
+  { id: 'test',     label: '¿Lo necesitas?',  Icon: Sparkles   },
 ];
 
 export default function Cabecera({ seccionActiva, onSeccion, barcelonaTime }) {

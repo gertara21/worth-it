@@ -4,6 +4,7 @@ import SeccionComprar from './components/SeccionComprar/SeccionComprar';
 import SeccionReparar from './components/SeccionReparar/SeccionReparar';
 import SeccionComunidad from './components/SeccionComunidad/SeccionComunidad';
 import SeccionComoElegimos from './components/SeccionComoElegimos/SeccionComoElegimos';
+import Quiz from './components/Quiz';
 import { useBarcelona } from './hooks/useBarcelona';
 
 class ErrorBoundary extends Component {
@@ -69,6 +70,22 @@ export default function App() {
         {seccionActiva === 'reparar' && <SeccionReparar />}
         {seccionActiva === 'comunidad' && <SeccionComunidad />}
         {seccionActiva === 'elegimos' && <SeccionComoElegimos />}
+        {seccionActiva === 'test' && (
+          <div style={{
+            minHeight: 'calc(100vh - var(--cabecera-h))',
+            background: '#F5EFE5',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '20px',
+            boxSizing: 'border-box'
+          }}>
+            <Quiz
+              mode="embedded"
+              onGoToComprar={() => setSeccionActiva('comprar')}
+            />
+          </div>
+        )}
       </main>
     </ErrorBoundary>
   );
