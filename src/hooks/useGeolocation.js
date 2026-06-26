@@ -22,7 +22,9 @@ export function useGeolocation() {
         setEstado('error');
         setMensaje(
           err.code === 1
-            ? 'Permiso de ubicación denegado.'
+            ? 'Ubicación bloqueada. En iOS: Ajustes > Safari > Ubicación > Permitir.'
+            : err.code === 3
+            ? 'No se pudo obtener tu ubicación. Inténtalo de nuevo.'
             : 'No se pudo obtener tu ubicación.'
         );
       },

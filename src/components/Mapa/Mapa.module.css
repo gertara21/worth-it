@@ -5,6 +5,13 @@
   background: #f0ead8;
 }
 
+@media (max-width: 768px) {
+  .mapa {
+    height: 60vh;
+    min-height: 400px;
+  }
+}
+
 .noKey {
   flex: 1;
   display: flex;

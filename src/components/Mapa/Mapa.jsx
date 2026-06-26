@@ -61,6 +61,13 @@ export default function Mapa({ tiendas, tiendaSeleccionada, onTiendaSeleccionada
       });
       mapInstanceRef.current = map;
 
+      // iOS Safari may not have finished painting the layout when Maps
+      // measures the container — force a resize after the first render.
+      setTimeout(() => {
+        google.maps.event.trigger(map, 'resize');
+        map.setCenter(BARCELONA_CENTER);
+      }, 300);
+
       // Build markers
       buildMarkers(google, map, tiendas, onTiendaSeleccionada);
     }).catch((err) => {
