@@ -1,8 +1,9 @@
-import { useState, useMemo, useCallback } from 'react';
+import { useState, useMemo, useCallback, useRef } from 'react';
 import Filtros from '../Filtros/Filtros';
 import Mapa from '../Mapa/Mapa';
 import ListaTiendas from '../ListaTiendas/ListaTiendas';
 import FichaTienda from '../FichaTienda/FichaTienda';
+import { Navigation } from 'lucide-react';
 import { estadoApertura } from '../../utils/abierto';
 import { haversine } from '../../utils/haversine';
 import { useGeolocation } from '../../hooks/useGeolocation';
@@ -14,11 +15,14 @@ const FILTROS_INICIALES = {
   busqueda: '',
 };
 
+const SHEET_STATES = ['peek', 'half', 'full'];
+
 export default function SeccionComprar({ tiendas, cargando, barcelonaTime }) {
   const [filtros, setFiltros] = useState(FILTROS_INICIALES);
   const [tiendaSeleccionada, setTiendaSeleccionada] = useState(null);
-  const [vistaMovil, setVistaMovil] = useState('mapa'); // 'mapa' | 'lista'
+  const [sheetState, setSheetState] = useState('peek');
   const { posicion, estado: geolEstado, mensaje: geolMsg, solicitar, limpiar } = useGeolocation();
+  const touchStartY = useRef(null);
 
   const handleFiltros = useCallback((cambios) => {
     setFiltros((prev) => ({ ...prev, ...cambios }));
@@ -32,7 +36,6 @@ export default function SeccionComprar({ tiendas, cargando, barcelonaTime }) {
     }
   }, [geolEstado, solicitar, limpiar]);
 
-  // Compute distances and sort if we have user location
   const tiendasConDistancia = useMemo(() => {
     if (!posicion) return tiendas;
     return tiendas
@@ -40,7 +43,6 @@ export default function SeccionComprar({ tiendas, cargando, barcelonaTime }) {
       .sort((a, b) => a._distancia - b._distancia);
   }, [tiendas, posicion]);
 
-  // Apply filters
   const tiendasFiltradas = useMemo(() => {
     return tiendasConDistancia.filter((t) => {
       if (filtros.busqueda) {
@@ -56,6 +58,40 @@ export default function SeccionComprar({ tiendas, cargando, barcelonaTime }) {
     });
   }, [tiendasConDistancia, filtros, barcelonaTime]);
 
+  const handleTouchStart = (e) => {
+    touchStartY.current = e.touches[0].clientY;
+  };
+
+  const handleTouchEnd = (e) => {
+    if (touchStartY.current === null) return;
+    const delta = touchStartY.current - e.changedTouches[0].clientY;
+    touchStartY.current = null;
+    if (Math.abs(delta) < 50) return;
+    const idx = SHEET_STATES.indexOf(sheetState);
+    if (delta > 0 && idx < SHEET_STATES.length - 1) setSheetState(SHEET_STATES[idx + 1]);
+    if (delta < 0 && idx > 0) setSheetState(SHEET_STATES[idx - 1]);
+  };
+
+  const handleHandleClick = () => {
+    setSheetState((prev) => (prev === 'peek' ? 'half' : 'peek'));
+  };
+
+  const handleSeleccionarMovil = useCallback((t) => {
+    setTiendaSeleccionada(t);
+    setSheetState('peek');
+  }, []);
+
+  const sheetHeight = sheetState === 'peek' ? '180px' : sheetState === 'half' ? '50vh' : '90vh';
+
+  const filtrosProps = {
+    filtros,
+    onChange: handleFiltros,
+    totalVisible: tiendasFiltradas.length,
+    totalTotal: tiendas.length,
+    geolEstado,
+    onCercaDeMi: handleCercaDeMi,
+  };
+
   if (cargando) {
     return (
       <div className={s.cargando}>
@@ -67,56 +103,27 @@ export default function SeccionComprar({ tiendas, cargando, barcelonaTime }) {
 
   return (
     <div className={s.wrap}>
-      <Filtros
-        filtros={filtros}
-        onChange={handleFiltros}
-        totalVisible={tiendasFiltradas.length}
-        totalTotal={tiendas.length}
-        geolEstado={geolEstado}
-        onCercaDeMi={handleCercaDeMi}
-      />
-
-      {/* Geolocation error message */}
-      {geolEstado === 'error' && (
-        <div className={s.geolError} role="alert">
-          {geolMsg}
-        </div>
-      )}
-
-      {/* Mobile tab switcher */}
-      <div className={s.tabsMobile}>
-        <button
-          className={`${s.tab} ${vistaMovil === 'mapa' ? s.tabActivo : ''}`}
-          onClick={() => setVistaMovil('mapa')}
-        >
-          Mapa
-        </button>
-        <button
-          className={`${s.tab} ${vistaMovil === 'lista' ? s.tabActivo : ''}`}
-          onClick={() => setVistaMovil('lista')}
-        >
-          Lista ({tiendasFiltradas.length})
-        </button>
+      {/* ── Desktop filtros bar (hidden on mobile) ── */}
+      <div className={s.filtrosDesktop}>
+        <Filtros {...filtrosProps} />
+        {geolEstado === 'error' && (
+          <div className={s.geolError} role="alert">{geolMsg}</div>
+        )}
       </div>
 
-      {/* Main layout */}
+      {/* ── Desktop layout: sidebar + map + ficha ── */}
       <div className={s.layout}>
-        {/* Sidebar: lista de tiendas */}
-        <div className={`${s.sidebar} ${vistaMovil === 'lista' ? s.sidebarVisible : ''}`}>
+        <div className={s.sidebar}>
           <ListaTiendas
             tiendas={tiendasFiltradas}
             tiendaSeleccionada={tiendaSeleccionada}
-            onSeleccionar={(t) => {
-              setTiendaSeleccionada(t);
-              setVistaMovil('mapa');
-            }}
+            onSeleccionar={setTiendaSeleccionada}
             barcelonaTime={barcelonaTime}
             posicionUsuario={posicion}
           />
         </div>
 
-        {/* Mapa */}
-        <div className={`${s.mapaWrap} ${vistaMovil === 'mapa' ? s.mapaVisible : ''}`}>
+        <div className={s.mapaWrap}>
           <Mapa
             tiendas={tiendasFiltradas}
             tiendaSeleccionada={tiendaSeleccionada}
@@ -125,14 +132,59 @@ export default function SeccionComprar({ tiendas, cargando, barcelonaTime }) {
           />
         </div>
 
-        {/* Ficha lateral */}
         {tiendaSeleccionada && (
-          <FichaTienda
-            tienda={tiendaSeleccionada}
-            barcelonaTime={barcelonaTime}
-            onCerrar={() => setTiendaSeleccionada(null)}
-          />
+          <div className={s.fichaDesktop}>
+            <FichaTienda
+              tienda={tiendaSeleccionada}
+              barcelonaTime={barcelonaTime}
+              onCerrar={() => setTiendaSeleccionada(null)}
+            />
+          </div>
         )}
+      </div>
+
+      {/* ── Mobile overlay: geo button + bottom sheet ── */}
+      <div className={s.mobileOverlay}>
+        <button
+          className={`${s.geoBtn} ${geolEstado === 'success' ? s.geoBtnActivo : ''}`}
+          onClick={handleCercaDeMi}
+          aria-label={geolEstado === 'loading' ? 'Buscando ubicación…' : 'Cerca de mí'}
+          disabled={geolEstado === 'loading'}
+          style={{ bottom: `calc(${sheetHeight} + 16px)` }}
+        >
+          <Navigation
+            size={20}
+            color={geolEstado === 'success' ? 'white' : '#FF6A1A'}
+          />
+        </button>
+
+        <div className={s.bottomSheet} style={{ height: sheetHeight }}>
+          <div
+            className={s.dragHandleArea}
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+            onClick={handleHandleClick}
+            role="button"
+            aria-label="Ajustar panel"
+          >
+            <div className={s.dragHandle} />
+          </div>
+
+          <Filtros {...filtrosProps} />
+          {geolEstado === 'error' && (
+            <div className={s.geolError} role="alert">{geolMsg}</div>
+          )}
+
+          <div className={s.listaMovil}>
+            <ListaTiendas
+              tiendas={tiendasFiltradas}
+              tiendaSeleccionada={tiendaSeleccionada}
+              onSeleccionar={handleSeleccionarMovil}
+              barcelonaTime={barcelonaTime}
+              posicionUsuario={posicion}
+            />
+          </div>
+        </div>
       </div>
     </div>
   );

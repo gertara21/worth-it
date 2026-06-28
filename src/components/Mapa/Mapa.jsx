@@ -40,6 +40,11 @@ export default function Mapa({ tiendas, tiendaSeleccionada, onTiendaSeleccionada
     if (loadedRef.current) return;
     loadedRef.current = true;
 
+    // Suppress the native Google Maps auth-failure popup
+    window.gm_authFailure = () => {
+      console.warn('Google Maps auth warning - verificar billing en Google Cloud Console');
+    };
+
     if (!API_KEY) return; // No key → show message (handled in render)
 
     setOptions({ apiKey: API_KEY, version: 'weekly' });
