@@ -130,6 +130,32 @@
   padding: 12px 0 4px;
 }
 
+/* ── Mobile ficha detail header ── */
+.fichaHeader {
+  flex-shrink: 0;
+  padding: 8px 16px 12px;
+  border-bottom: 1px solid #f0ebe3;
+}
+
+.volverBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #111;
+  font: 600 15px 'Space Grotesk', sans-serif;
+  padding: 4px 0;
+}
+
+/* Scrollable ficha content */
+.fichaScroll {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 /* ── Geolocation floating button ── */
 .geoBtn {
   position: absolute;

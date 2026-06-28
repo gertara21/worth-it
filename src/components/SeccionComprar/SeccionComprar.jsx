@@ -68,6 +68,8 @@ export default function SeccionComprar({ tiendas, cargando, barcelonaTime }) {
     if (touchStartY.current === null) return;
     const delta = touchStartY.current - e.changedTouches[0].clientY;
     touchStartY.current = null;
+    // Block drag when showing store detail
+    if (tiendaSeleccionada) return;
     if (Math.abs(delta) < 50) return;
     const idx = SHEET_STATES.indexOf(sheetState);
     if (delta > 0 && idx < SHEET_STATES.length - 1) setSheetState(SHEET_STATES[idx + 1]);
@@ -75,12 +77,18 @@ export default function SeccionComprar({ tiendas, cargando, barcelonaTime }) {
   };
 
   const handleHandleClick = () => {
+    if (tiendaSeleccionada) return;
     setSheetState((prev) => (prev === 'peek' ? 'half' : 'peek'));
   };
 
   const handleSeleccionarMovil = useCallback((t) => {
     setTiendaSeleccionada(t);
-    setSheetState('peek');
+    setSheetState('full');
+  }, []);
+
+  const handleVolverMovil = useCallback(() => {
+    setTiendaSeleccionada(null);
+    setSheetState('half');
   }, []);
 
   const handleScrollLista = (e) => {
@@ -179,23 +187,44 @@ export default function SeccionComprar({ tiendas, cargando, barcelonaTime }) {
             <div className={s.dragHandle} />
           </div>
 
-          <Filtros {...filtrosProps} />
-          {geolEstado === 'error' && (
-            <div className={s.geolError} role="alert">{geolMsg}</div>
+          {tiendaSeleccionada ? (
+            /* ── Vista detalle ── */
+            <>
+              <div className={s.fichaHeader}>
+                <button className={s.volverBtn} onClick={handleVolverMovil}>
+                  ← Volver
+                </button>
+              </div>
+              <div className={s.fichaScroll}>
+                <FichaTienda
+                  tienda={tiendaSeleccionada}
+                  barcelonaTime={barcelonaTime}
+                  onCerrar={handleVolverMovil}
+                  modoMobile={true}
+                />
+              </div>
+            </>
+          ) : (
+            /* ── Vista lista ── */
+            <>
+              <Filtros {...filtrosProps} />
+              {geolEstado === 'error' && (
+                <div className={s.geolError} role="alert">{geolMsg}</div>
+              )}
+              <div className={s.listaMovil} onScroll={handleScrollLista}>
+                <ListaTiendas
+                  tiendas={tiendasFiltradas.slice(0, visibles)}
+                  tiendaSeleccionada={tiendaSeleccionada}
+                  onSeleccionar={handleSeleccionarMovil}
+                  barcelonaTime={barcelonaTime}
+                  posicionUsuario={posicion}
+                />
+                {visibles < tiendasFiltradas.length && (
+                  <p className={s.cargandoMas}>Cargando más tiendas…</p>
+                )}
+              </div>
+            </>
           )}
-
-          <div className={s.listaMovil} onScroll={handleScrollLista}>
-            <ListaTiendas
-              tiendas={tiendasFiltradas.slice(0, visibles)}
-              tiendaSeleccionada={tiendaSeleccionada}
-              onSeleccionar={handleSeleccionarMovil}
-              barcelonaTime={barcelonaTime}
-              posicionUsuario={posicion}
-            />
-            {visibles < tiendasFiltradas.length && (
-              <p className={s.cargandoMas}>Cargando más tiendas…</p>
-            )}
-          </div>
         </div>
       </div>
     </div>
