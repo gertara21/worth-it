@@ -5,6 +5,12 @@
   min-height: 0;
 }
 
+/* ── Desktop filtros bar ── */
+.filtrosDesktop {
+  /* Filtros component handles its own styling */
+}
+
+/* ── Desktop layout ── */
 .layout {
   display: flex;
   flex: 1;
@@ -32,6 +38,12 @@
   position: relative;
 }
 
+/* FichaTienda wrapper — visible on desktop, hidden on mobile */
+.fichaDesktop {
+  display: contents;
+}
+
+/* ── Loading state ── */
 .cargando {
   flex: 1;
   display: flex;
@@ -65,66 +77,121 @@
   text-align: center;
 }
 
-/* Mobile tabs */
-.tabsMobile {
+/* ── Mobile overlay (hidden on desktop) ── */
+.mobileOverlay {
   display: none;
-  background: var(--color-fondo);
-  border-bottom: 1.5px solid var(--color-borde);
 }
 
-.tab {
+/* ── Mobile bottom sheet ── */
+.bottomSheet {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #F5EFE5;
+  border-radius: 20px 20px 0 0;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+  transition: height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  pointer-events: auto;
+}
+
+.dragHandleArea {
+  flex-shrink: 0;
+  padding: 12px 0 8px;
+  cursor: grab;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dragHandle {
+  width: 40px;
+  height: 4px;
+  background: #ccc;
+  border-radius: 2px;
+}
+
+.listaMovil {
   flex: 1;
-  padding: 10px;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--color-texto-suave);
-  background: none;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ── Geolocation floating button ── */
+.geoBtn {
+  position: absolute;
+  right: 16px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: white;
   border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  border-bottom: 2.5px solid transparent;
-  transition: all 0.15s;
+  z-index: 99;
+  pointer-events: auto;
+  transition: background 0.15s, bottom 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.tabActivo {
-  color: var(--color-primario);
-  border-bottom-color: var(--color-primario);
+.geoBtn:disabled {
+  opacity: 0.6;
+  cursor: default;
 }
 
-@media (max-width: 768px) {
-  .tabsMobile {
-    display: flex;
-    position: sticky;
-    top: calc(var(--cabecera-h) + var(--filtros-h));
-    z-index: 80;
+.geoBtnActivo {
+  background: #FF6A1A;
+}
+
+/* ── Mobile overrides ── */
+@media (max-width: 767px) {
+  .filtrosDesktop {
+    display: none;
   }
 
+  /* Layout fills full screen behind the bottom sheet */
   .layout {
-    height: calc(100dvh - var(--cabecera-h) - var(--filtros-h) - 43px);
-    position: relative;
+    position: fixed;
+    top: var(--cabecera-h);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: auto;
+    flex: unset;
   }
 
   .sidebar {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    max-width: 100%;
-    min-width: unset;
-    border-right: none;
     display: none;
-    z-index: 10;
   }
 
-  .sidebarVisible {
-    display: flex;
-  }
-
+  /* Map fills the entire fixed layout */
   .mapaWrap {
     position: absolute;
     inset: 0;
+    flex: unset;
+    display: flex;
+  }
+
+  /* Hide FichaTienda on mobile */
+  .fichaDesktop {
     display: none;
   }
 
-  .mapaVisible {
-    display: flex;
+  /* Show the mobile overlay */
+  .mobileOverlay {
+    display: block;
+    position: fixed;
+    top: var(--cabecera-h);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 50;
+    pointer-events: none;
   }
 }
