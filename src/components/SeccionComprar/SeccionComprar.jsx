@@ -21,11 +21,13 @@ export default function SeccionComprar({ tiendas, cargando, barcelonaTime }) {
   const [filtros, setFiltros] = useState(FILTROS_INICIALES);
   const [tiendaSeleccionada, setTiendaSeleccionada] = useState(null);
   const [sheetState, setSheetState] = useState('peek');
+  const [visibles, setVisibles] = useState(10);
   const { posicion, estado: geolEstado, mensaje: geolMsg, solicitar, limpiar } = useGeolocation();
   const touchStartY = useRef(null);
 
   const handleFiltros = useCallback((cambios) => {
     setFiltros((prev) => ({ ...prev, ...cambios }));
+    setVisibles(10);
   }, []);
 
   const handleCercaDeMi = useCallback(() => {
@@ -80,6 +82,13 @@ export default function SeccionComprar({ tiendas, cargando, barcelonaTime }) {
     setTiendaSeleccionada(t);
     setSheetState('peek');
   }, []);
+
+  const handleScrollLista = (e) => {
+    const { scrollTop, scrollHeight, clientHeight } = e.currentTarget;
+    if (scrollTop + clientHeight >= scrollHeight * 0.8) {
+      setVisibles((prev) => Math.min(prev + 10, tiendasFiltradas.length));
+    }
+  };
 
   const sheetHeight = sheetState === 'peek' ? '180px' : sheetState === 'half' ? '50vh' : '90vh';
 
@@ -175,14 +184,17 @@ export default function SeccionComprar({ tiendas, cargando, barcelonaTime }) {
             <div className={s.geolError} role="alert">{geolMsg}</div>
           )}
 
-          <div className={s.listaMovil}>
+          <div className={s.listaMovil} onScroll={handleScrollLista}>
             <ListaTiendas
-              tiendas={tiendasFiltradas}
+              tiendas={tiendasFiltradas.slice(0, visibles)}
               tiendaSeleccionada={tiendaSeleccionada}
               onSeleccionar={handleSeleccionarMovil}
               barcelonaTime={barcelonaTime}
               posicionUsuario={posicion}
             />
+            {visibles < tiendasFiltradas.length && (
+              <p className={s.cargandoMas}>Cargando más tiendas…</p>
+            )}
           </div>
         </div>
       </div>
