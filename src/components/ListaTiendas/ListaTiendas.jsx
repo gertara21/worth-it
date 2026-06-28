@@ -37,28 +37,27 @@ export default function ListaTiendas({ tiendas, tiendaSeleccionada, onSelecciona
             aria-selected={seleccionada}
             role="listitem"
           >
-            {/* Left accent bar when selected */}
             {seleccionada && <div className={s.accentBar} aria-hidden="true" />}
 
             <div className={s.cardInner}>
+              {/* Fila 1: nombre + badge estado */}
               <div className={s.cardTop}>
-                <div className={s.cardInfo}>
-                  <span className={s.nombre}>{t.nombre}</span>
-                  <span className={s.barrio}>
-                    <MapPin size={11} strokeWidth={2} />
-                    {t.barrio}
-                  </span>
-                </div>
+                <span className={s.nombre}>{t.nombre}</span>
+                <EstadoChip estado={ap.estado} texto={ap.texto} />
+              </div>
+
+              {/* Fila 2: barrio + rating */}
+              <div className={s.cardMid}>
+                <span className={s.barrio}>
+                  <MapPin size={11} strokeWidth={2} />
+                  {t.barrio}
+                </span>
                 {t.valoracionGoogle && (
                   <span className={s.rating}>
                     <Star size={11} fill="var(--color-secundario)" strokeWidth={0} />
                     {t.valoracionGoogle.toFixed(1)}
                   </span>
                 )}
-              </div>
-
-              <div className={s.cardBottom}>
-                <EstadoChip estado={ap.estado} texto={ap.texto} />
                 {posicionUsuario && t._distancia !== undefined && (
                   <span className={s.distancia}>
                     <Navigation size={11} />
@@ -66,6 +65,18 @@ export default function ListaTiendas({ tiendas, tiendaSeleccionada, onSelecciona
                   </span>
                 )}
               </div>
+
+              {/* Fila 3: chips web / instagram (solo en móvil via CSS) */}
+              {(t.web || t.instagram) && (
+                <div className={s.chips}>
+                  {t.web && (
+                    <span className={s.chipLink}>🌐 Web</span>
+                  )}
+                  {t.instagram && (
+                    <span className={s.chipLink}>📷 Instagram</span>
+                  )}
+                </div>
+              )}
             </div>
           </button>
         );
