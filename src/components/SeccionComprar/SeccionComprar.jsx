@@ -189,13 +189,41 @@ export default function SeccionComprar({ tiendas, cargando, barcelonaTime }) {
 
           {tiendaSeleccionada ? (
             /* ── Vista detalle ── */
-            <>
-              <div className={s.fichaHeader}>
-                <button className={s.volverBtn} onClick={handleVolverMovil}>
-                  ← Volver
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', background: '#ffffff' }}>
+              {/* Header fijo — fuera del scroll */}
+              <div style={{
+                position: 'sticky',
+                top: 0,
+                zIndex: 999,
+                background: '#ffffff',
+                borderBottom: '1px solid #f0ebe3',
+                padding: '14px 16px',
+                display: 'flex',
+                alignItems: 'center',
+                flexShrink: 0,
+              }}>
+                <button
+                  onClick={handleVolverMovil}
+                  style={{
+                    background: 'none',
+                    border: 'none',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    fontSize: '15px',
+                    fontWeight: '600',
+                    color: '#111111',
+                    fontFamily: 'Space Grotesk, sans-serif',
+                    padding: '0',
+                    WebkitTapHighlightColor: 'transparent',
+                  }}
+                >
+                  ← Volver al listado
                 </button>
               </div>
-              <div className={s.fichaScroll}>
+              {/* Contenido con scroll */}
+              <div style={{ flex: 1, overflowY: 'auto', WebkitOverflowScrolling: 'touch', background: '#ffffff' }}>
                 <FichaTienda
                   tienda={tiendaSeleccionada}
                   barcelonaTime={barcelonaTime}
@@ -203,7 +231,7 @@ export default function SeccionComprar({ tiendas, cargando, barcelonaTime }) {
                   modoMobile={true}
                 />
               </div>
-            </>
+            </div>
           ) : (
             /* ── Vista lista ── */
             <>
