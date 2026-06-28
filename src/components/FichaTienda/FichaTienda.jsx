@@ -26,15 +26,17 @@ function HorarioInterval([apertura, cierre]) {
   return `${apertura}–${cierre}`;
 }
 
-export default function FichaTienda({ tienda, barcelonaTime, onCerrar }) {
+export default function FichaTienda({ tienda, barcelonaTime, onCerrar, modoMobile = false }) {
   const [horarioExpand, setHorarioExpand] = useState(false);
   if (!tienda) return null;
 
   const apertura = estadoApertura(tienda, barcelonaTime);
   const mapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${tienda.lat},${tienda.lon}`;
 
+  const estiloMobile = modoMobile ? { padding: '0 16px 32px', width: '100%' } : {};
+
   return (
-    <aside className={s.panel} aria-label={`Ficha de ${tienda.nombre}`}>
+    <aside className={s.panel} style={modoMobile ? { display: 'flex', flexDirection: 'column', width: '100%', background: 'none', boxShadow: 'none', border: 'none' } : {}} aria-label={`Ficha de ${tienda.nombre}`}>
       {/* Header */}
       <div className={s.header}>
         <div className={s.headerText}>
@@ -44,9 +46,11 @@ export default function FichaTienda({ tienda, barcelonaTime, onCerrar }) {
             {tienda.barrio}
           </p>
         </div>
-        <button className={s.cerrar} onClick={onCerrar} aria-label="Cerrar ficha">
-          <X size={18} />
-        </button>
+        {!modoMobile && (
+          <button className={s.cerrar} onClick={onCerrar} aria-label="Cerrar ficha">
+            <X size={18} />
+          </button>
+        )}
       </div>
 
       {/* Placeholder imagen */}
@@ -57,7 +61,7 @@ export default function FichaTienda({ tienda, barcelonaTime, onCerrar }) {
         </div>
       </div>
 
-      <div className={s.body}>
+      <div className={s.body} style={estiloMobile}>
         {/* Estado apertura + rating */}
         <div className={s.statusRow}>
           <EstadoBadge estado={apertura.estado} texto={apertura.texto} />
