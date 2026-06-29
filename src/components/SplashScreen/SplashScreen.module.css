@@ -1,0 +1,30 @@
+.splash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #F6F1E6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeOut 0.4s ease 2s forwards;
+}
+
+.logo {
+  width: 160px;
+  height: auto;
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%   { transform: scale(1);    opacity: 1;   }
+  50%  { transform: scale(1.08); opacity: 0.85; }
+  100% { transform: scale(1);    opacity: 1;   }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; pointer-events: all; }
+  to   { opacity: 0; pointer-events: none; }
+}
