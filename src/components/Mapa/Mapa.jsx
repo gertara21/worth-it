@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { setOptions, importLibrary } from '@googlemaps/js-api-loader';
 import { MarkerClusterer } from '@googlemaps/markerclusterer';
 import s from './Mapa.module.css';
@@ -33,13 +33,14 @@ export default function Mapa({ tiendas, tiendaSeleccionada, onTiendaSeleccionada
   const mapRef = useRef(null);
   const googleRef = useRef(null);
   const mapInstanceRef = useRef(null);
-  const markersRef = useRef([]);    // { tienda, marker, svgEl }
+  const markersRef = useRef([]);
   const clustererRef = useRef(null);
   const userMarkerRef = useRef(null);
+  const [mostrarBannerMaps, setMostrarBannerMaps] = useState(false);
+
   // Initialize map once
   useEffect(() => {
     if (mapsInitialized) {
-      // Maps ya cargado (remontaje del componente) — reconstruir solo marcadores
       if (mapInstanceRef.current && googleRef.current) {
         buildMarkers(googleRef.current, mapInstanceRef.current, tiendas, onTiendaSeleccionada);
       }
@@ -47,7 +48,20 @@ export default function Mapa({ tiendas, tiendaSeleccionada, onTiendaSeleccionada
     }
     mapsInitialized = true;
 
-    if (!API_KEY) return; // No key → show message (handled in render)
+    window.gm_authFailure = () => {
+      console.warn('Google Maps auth warning');
+      setMostrarBannerMaps(true);
+      const observer = new MutationObserver(() => {
+        const errorDiv = document.querySelector('.gm-err-container, [class*="gm-err"]');
+        if (!errorDiv) {
+          setMostrarBannerMaps(false);
+          observer.disconnect();
+        }
+      });
+      observer.observe(document.body, { childList: true, subtree: true });
+    };
+
+    if (!API_KEY) return;
 
     setOptions({ apiKey: API_KEY, version: 'weekly' });
 
@@ -223,7 +237,48 @@ export default function Mapa({ tiendas, tiendaSeleccionada, onTiendaSeleccionada
     );
   }
 
-  return <div ref={mapRef} className={s.mapa} aria-label="Mapa de tiendas en Barcelona" />;
+  return (
+    <div style={{ position: 'relative', flex: 1, display: 'flex', flexDirection: 'column' }}>
+      {mostrarBannerMaps && (
+        <div style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          zIndex: 500,
+          background: '#FFF8F0',
+          borderBottom: '1px solid #FFD4A8',
+          padding: '10px 16px',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '10px',
+          fontSize: '13px',
+          color: '#7A4010',
+          fontFamily: 'Space Grotesk, sans-serif',
+        }}>
+          <span>⚠️</span>
+          <span>El mapa funciona en modo limitado — clave de Google Maps pendiente de configurar.</span>
+          <button
+            onClick={() => setMostrarBannerMaps(false)}
+            style={{
+              marginLeft: 'auto',
+              background: 'none',
+              border: 'none',
+              cursor: 'pointer',
+              fontSize: '16px',
+              color: '#7A4010',
+              padding: '0 4px',
+              lineHeight: 1,
+            }}
+            aria-label="Cerrar aviso"
+          >
+            ×
+          </button>
+        </div>
+      )}
+      <div ref={mapRef} className={s.mapa} aria-label="Mapa de tiendas en Barcelona" />
+    </div>
+  );
 }
 
 function clusterSVG(count) {
