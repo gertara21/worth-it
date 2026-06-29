@@ -41,7 +41,7 @@ export default function App() {
 
   useEffect(() => {
     if (isSpecialPage) return;
-    const timer = setTimeout(() => setShowSplash(false), 2400);
+    const timer = setTimeout(() => setShowSplash(false), 4400);
     return () => clearTimeout(timer);
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
