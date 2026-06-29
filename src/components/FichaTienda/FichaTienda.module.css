@@ -266,26 +266,14 @@
   transform: translateY(-1px);
 }
 
-/* Mobile: full-screen overlay */
+/* Mobile: panel lives inside the overlay managed by SeccionComprar — no fixed positioning */
 @media (max-width: 768px) {
   .panel {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
     width: 100%;
     min-width: unset;
-    max-height: 75dvh;
     border-left: none;
-    border-top: 1.5px solid var(--color-borde);
-    border-radius: 20px 20px 0 0;
-    box-shadow: 0 -8px 30px rgba(0,0,0,0.15);
-    z-index: 300;
-    animation: slideUp 0.25s ease;
-  }
-
-  @keyframes slideUp {
-    from { transform: translateY(30px); opacity: 0; }
-    to   { transform: translateY(0);    opacity: 1; }
+    box-shadow: none;
+    border-radius: 0;
+    animation: none;
   }
 }

@@ -187,73 +187,82 @@ export default function SeccionComprar({ tiendas, cargando, barcelonaTime }) {
             <div className={s.dragHandle} />
           </div>
 
-          {tiendaSeleccionada ? (
-            /* ── Vista detalle ── */
-            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', background: '#ffffff' }}>
-              {/* Header fijo — fuera del scroll */}
-              <div style={{
-                position: 'sticky',
-                top: 0,
-                zIndex: 999,
-                background: '#ffffff',
-                borderBottom: '1px solid #f0ebe3',
-                padding: '14px 16px',
-                display: 'flex',
-                alignItems: 'center',
-                flexShrink: 0,
-              }}>
-                <button
-                  onClick={handleVolverMovil}
-                  style={{
-                    background: 'none',
-                    border: 'none',
-                    cursor: 'pointer',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '6px',
-                    fontSize: '15px',
-                    fontWeight: '600',
-                    color: '#111111',
-                    fontFamily: 'Space Grotesk, sans-serif',
-                    padding: '0',
-                    WebkitTapHighlightColor: 'transparent',
-                  }}
-                >
-                  ← Volver al listado
-                </button>
-              </div>
-              {/* Contenido con scroll */}
-              <div style={{ flex: 1, overflowY: 'auto', WebkitOverflowScrolling: 'touch', background: '#ffffff' }}>
-                <FichaTienda
-                  tienda={tiendaSeleccionada}
-                  barcelonaTime={barcelonaTime}
-                  onCerrar={handleVolverMovil}
-                  modoMobile={true}
-                />
-              </div>
-            </div>
-          ) : (
-            /* ── Vista lista ── */
-            <>
-              <Filtros {...filtrosProps} />
-              {geolEstado === 'error' && (
-                <div className={s.geolError} role="alert">{geolMsg}</div>
+          {/* ── Vista lista (siempre presente en el sheet) ── */}
+          <>
+            <Filtros {...filtrosProps} />
+            {geolEstado === 'error' && (
+              <div className={s.geolError} role="alert">{geolMsg}</div>
+            )}
+            <div className={s.listaMovil} onScroll={handleScrollLista}>
+              <ListaTiendas
+                tiendas={tiendasFiltradas.slice(0, visibles)}
+                tiendaSeleccionada={tiendaSeleccionada}
+                onSeleccionar={handleSeleccionarMovil}
+                barcelonaTime={barcelonaTime}
+                posicionUsuario={posicion}
+              />
+              {visibles < tiendasFiltradas.length && (
+                <p className={s.cargandoMas}>Cargando más tiendas…</p>
               )}
-              <div className={s.listaMovil} onScroll={handleScrollLista}>
-                <ListaTiendas
-                  tiendas={tiendasFiltradas.slice(0, visibles)}
-                  tiendaSeleccionada={tiendaSeleccionada}
-                  onSeleccionar={handleSeleccionarMovil}
-                  barcelonaTime={barcelonaTime}
-                  posicionUsuario={posicion}
-                />
-                {visibles < tiendasFiltradas.length && (
-                  <p className={s.cargandoMas}>Cargando más tiendas…</p>
-                )}
-              </div>
-            </>
-          )}
+            </div>
+          </>
         </div>
+
+        {/* ── Overlay detalle: arranca justo debajo de la Cabecera ── */}
+        {tiendaSeleccionada && (
+          <div style={{
+            position: 'fixed',
+            top: 'var(--cabecera-h)',
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background: '#ffffff',
+            zIndex: 200,
+            display: 'flex',
+            flexDirection: 'column',
+            overflowY: 'hidden',
+          }}>
+            {/* Botón volver — sticky, siempre visible */}
+            <div style={{
+              position: 'sticky',
+              top: 0,
+              background: '#ffffff',
+              borderBottom: '1px solid #f0ebe3',
+              padding: '14px 16px',
+              zIndex: 201,
+              flexShrink: 0,
+            }}>
+              <button
+                onClick={handleVolverMovil}
+                style={{
+                  background: 'none',
+                  border: 'none',
+                  cursor: 'pointer',
+                  fontSize: '15px',
+                  fontWeight: '600',
+                  color: '#111111',
+                  fontFamily: 'Space Grotesk, sans-serif',
+                  padding: '0',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  WebkitTapHighlightColor: 'transparent',
+                }}
+              >
+                ← Volver al listado
+              </button>
+            </div>
+            {/* Contenido de la ficha con scroll */}
+            <div style={{ flex: 1, overflowY: 'auto', WebkitOverflowScrolling: 'touch', background: '#ffffff' }}>
+              <FichaTienda
+                tienda={tiendaSeleccionada}
+                barcelonaTime={barcelonaTime}
+                onCerrar={handleVolverMovil}
+                modoMobile={true}
+              />
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
