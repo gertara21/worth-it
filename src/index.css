@@ -1,4 +1,12 @@
 /* Worth It — Global styles */
+
+/* Suprimir popup de error nativo de Google Maps */
+.gm-err-container,
+.gm-err-content,
+.gm-err-autocomplete,
+[class*="gm-err"] {
+  display: none !important;
+}
 :root {
   --color-fondo:      #F6F1E6;
   --color-texto:      #111111;
