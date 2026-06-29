@@ -22,7 +22,9 @@ export default function Cabecera({ seccionActiva, onSeccion, barcelonaTime }) {
         <button
           className={s.logo}
           onClick={() => { onSeccion('comprar'); setMenuAbierto(false); }}
+          onTouchEnd={(e) => { e.preventDefault(); onSeccion('comprar'); setMenuAbierto(false); }}
           aria-label="Worth It — ir al inicio"
+          style={{ touchAction: 'manipulation', WebkitTapHighlightColor: 'transparent' }}
         >
           <LogoSVG />
         </button>
