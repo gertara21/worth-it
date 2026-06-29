@@ -5,6 +5,9 @@ import s from './Mapa.module.css';
 
 const API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY ?? '';
 
+// Guard a nivel de módulo: persiste entre remontajes del componente
+let mapsInitialized = false;
+
 const BARCELONA_CENTER = { lat: 41.3954, lng: 2.1707 };
 const DEFAULT_ZOOM = 13;
 
@@ -33,17 +36,16 @@ export default function Mapa({ tiendas, tiendaSeleccionada, onTiendaSeleccionada
   const markersRef = useRef([]);    // { tienda, marker, svgEl }
   const clustererRef = useRef(null);
   const userMarkerRef = useRef(null);
-  const loadedRef = useRef(false);
-
   // Initialize map once
   useEffect(() => {
-    if (loadedRef.current) return;
-    loadedRef.current = true;
-
-    // Suppress the native Google Maps auth-failure popup
-    window.gm_authFailure = () => {
-      console.warn('Google Maps auth warning - verificar billing en Google Cloud Console');
-    };
+    if (mapsInitialized) {
+      // Maps ya cargado (remontaje del componente) — reconstruir solo marcadores
+      if (mapInstanceRef.current && googleRef.current) {
+        buildMarkers(googleRef.current, mapInstanceRef.current, tiendas, onTiendaSeleccionada);
+      }
+      return;
+    }
+    mapsInitialized = true;
 
     if (!API_KEY) return; // No key → show message (handled in render)
 
