@@ -5,6 +5,7 @@ import SeccionReparar from './components/SeccionReparar/SeccionReparar';
 import SeccionComunidad from './components/SeccionComunidad/SeccionComunidad';
 import SeccionComoElegimos from './components/SeccionComoElegimos/SeccionComoElegimos';
 import Quiz from './components/Quiz';
+import SplashScreen from './components/SplashScreen/SplashScreen';
 import { useBarcelona } from './hooks/useBarcelona';
 
 class ErrorBoundary extends Component {
@@ -28,10 +29,21 @@ class ErrorBoundary extends Component {
 }
 
 export default function App() {
+  const isSpecialPage =
+    window.location.pathname === '/quiz' ||
+    window.location.pathname === '/video';
+
+  const [showSplash, setShowSplash] = useState(!isSpecialPage);
   const [seccionActiva, setSeccionActiva] = useState('comprar');
   const [tiendas, setTiendas] = useState([]);
   const [cargando, setCargando] = useState(true);
   const barcelonaTime = useBarcelona();
+
+  useEffect(() => {
+    if (isSpecialPage) return;
+    const timer = setTimeout(() => setShowSplash(false), 2400);
+    return () => clearTimeout(timer);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     fetch('/tiendas.json')
@@ -50,7 +62,14 @@ export default function App() {
   };
 
   return (
+    <>
+      {showSplash && <SplashScreen />}
     <ErrorBoundary>
+      <div style={{
+        opacity: showSplash ? 0 : 1,
+        transition: 'opacity 0.4s ease',
+        visibility: showSplash ? 'hidden' : 'visible',
+      }}>
       <Cabecera
         seccionActiva={seccionActiva}
         onSeccion={handleSeccion}
@@ -87,6 +106,8 @@ export default function App() {
           </div>
         )}
       </main>
+      </div>
     </ErrorBoundary>
+    </>
   );
 }
