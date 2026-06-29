@@ -238,30 +238,40 @@ export default function SeccionComprar({ tiendas, cargando, barcelonaTime }) {
 
         {/* ── Overlay detalle completo: arranca justo debajo de la Cabecera ── */}
         {tiendaDetalle && (
-          <div style={{
-            position: 'fixed',
-            top: 'var(--cabecera-h)',
-            left: 0,
-            right: 0,
-            bottom: 0,
-            background: '#ffffff',
-            zIndex: 200,
-            display: 'flex',
-            flexDirection: 'column',
-            overflowY: 'hidden',
-          }}>
+          <div
+            onTouchStart={(e) => e.stopPropagation()}
+            onTouchMove={(e) => e.stopPropagation()}
+            onTouchEnd={(e) => e.stopPropagation()}
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              position: 'fixed',
+              top: 'var(--cabecera-h)',
+              left: 0,
+              right: 0,
+              bottom: 0,
+              background: '#ffffff',
+              zIndex: 1000,
+              display: 'flex',
+              flexDirection: 'column',
+              overflowY: 'auto',
+              WebkitOverflowScrolling: 'touch',
+              pointerEvents: 'all',
+              touchAction: 'pan-y',
+              isolation: 'isolate',
+            }}
+          >
             <div style={{
               position: 'sticky',
               top: 0,
               background: '#ffffff',
               borderBottom: '1px solid #f0ebe3',
               padding: '14px 16px',
-              zIndex: 201,
+              zIndex: 1001,
               flexShrink: 0,
             }}>
               <button
-                onClick={() => handleVolverAPreview(tiendaDetalle)}
-                onTouchEnd={(e) => { e.preventDefault(); handleVolverAPreview(tiendaDetalle); }}
+                onClick={(e) => { e.stopPropagation(); e.preventDefault(); handleVolverAPreview(tiendaDetalle); }}
+                onTouchEnd={(e) => { e.stopPropagation(); e.preventDefault(); handleVolverAPreview(tiendaDetalle); }}
                 style={{
                   background: 'none',
                   border: 'none',
@@ -276,6 +286,8 @@ export default function SeccionComprar({ tiendas, cargando, barcelonaTime }) {
                   gap: '8px',
                   WebkitTapHighlightColor: 'transparent',
                   touchAction: 'manipulation',
+                  position: 'relative',
+                  zIndex: 1001,
                 }}
               >
                 ← Volver al listado

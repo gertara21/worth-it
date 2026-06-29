@@ -35,8 +35,22 @@ export default function FichaTienda({ tienda, barcelonaTime, onCerrar, modoMobil
 
   const estiloMobile = modoMobile ? { padding: '0 16px 32px', width: '100%' } : {};
 
+  const stopAll = modoMobile
+    ? {
+        onTouchStart: (e) => e.stopPropagation(),
+        onTouchMove: (e) => e.stopPropagation(),
+        onTouchEnd: (e) => e.stopPropagation(),
+        onClick: (e) => e.stopPropagation(),
+      }
+    : {};
+
   return (
-    <aside className={s.panel} style={modoMobile ? { position: 'relative', display: 'flex', flexDirection: 'column', width: '100%', maxHeight: 'none', background: '#ffffff', boxShadow: 'none', border: 'none', borderRadius: 0, zIndex: 'auto', animation: 'none' } : {}} aria-label={`Ficha de ${tienda.nombre}`}>
+    <aside
+      {...stopAll}
+      className={s.panel}
+      style={modoMobile ? { position: 'relative', display: 'flex', flexDirection: 'column', width: '100%', maxHeight: 'none', background: '#ffffff', boxShadow: 'none', border: 'none', borderRadius: 0, zIndex: 'auto', animation: 'none' } : {}}
+      aria-label={`Ficha de ${tienda.nombre}`}
+    >
       {/* Header */}
       <div className={s.header}>
         <div className={s.headerText}>
